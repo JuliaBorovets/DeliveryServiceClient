@@ -9,6 +9,7 @@ import {NotFoundComponent} from './pages/not-found/not-found.component';
 import {UnauthorizedComponent} from './pages/unauthorized/unauthorized.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {OrdersComponent} from './pages/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     HomeComponent,
     RegisterComponent,
     NotFoundComponent,
-    UnauthorizedComponent
+    UnauthorizedComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
