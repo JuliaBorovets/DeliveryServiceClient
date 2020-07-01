@@ -1,0 +1,81 @@
+<section class="jumbotron text-center">
+  <div class="container">
+
+
+    <form name="form-signup" (ngSubmit)="f.form.valid && register()" #f="ngForm"
+          [ngClass]="f.submitted ? 'was-validated' : ''">
+      <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+        {{errorMessage}}
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 offset-md-0 form-group text-center">
+
+          <div class="form-group" [ngClass]="{'has-error': f.submitted && !firstName.valid}">
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName" class="form-control" id="firstName" placeholder="first name"
+                   [(ngModel)]="user.firstName" #firstName="ngModel" required/>
+            <div class="invalid-feedback">First name is required.</div>
+          </div>
+        </div>
+
+        <div class="col-md-6 offset-md-0 form-group text-center">
+
+          <div class="form-group" [ngClass]="{'has-error': f.submitted && !lastName.valid}">
+            <label for="lastName">Last Name</label>
+            <input type="text" name="lastName" class="form-control" id="lastName" placeholder="last name"
+                   [(ngModel)]="user.lastName" #lastName="ngModel" required/>
+            <div class="invalid-feedback">Last name is required.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 offset-md-0 form-group text-center">
+
+          <div class="form-group" [ngClass]="{'has-error': f.submitted && !login.valid}">
+            <label for="login">login</label>
+            <input type="text" name="login" class="form-control" id="login" placeholder="login" [(ngModel)]="user.login"
+                   #login="ngModel" required/>
+            <div class="invalid-feedback">An valid login is required.</div>
+          </div>
+
+        </div>
+
+        <div class="col-md-6 offset-md-0 form-group text-center">
+
+          <div class="form-group" [ngClass]="{'has-error': f.submitted && !email.valid}">
+            <label for="email">email</label>
+            <input type="email" name="email" class="form-control" id="email" placeholder="email"
+                   [(ngModel)]="user.email" #email="ngModel" required/>
+            <div class="invalid-feedback">Email is required.</div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md-6 offset-md-3 form-group text-center"
+             [ngClass]="{'has-error': f.submitted && !password.valid}">
+          <label for="password">password</label>
+          <input type="password" id="password" name="password" placeholder="password" class="form-control"
+                 [(ngModel)]="user.password" #password="ngModel" required/>
+
+          <div class="invalid-feedback">Password is required.</div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+        <div class="col-md-6 offset-md-3 form-group text-center">
+          <button type="submit" class="button">Sign Up</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  <br>
+</section>

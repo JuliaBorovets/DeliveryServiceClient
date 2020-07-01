@@ -1,0 +1,68 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+
+h1 {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 38px;
+  line-height: 40px;
+}
+
+.p_name {
+  font-size: 32px;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 30px;
+}
+
+.d-flex {
+  background-color: rgba(169, 163, 221, 0.58);
+}
+
+footer.sticky-footer {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background: rgba(255, 255, 255, 0);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.jumbotron {
+  background: linear-gradient(125deg, #5499c7, #ffffff);
+
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 800px;
+  height: auto;
+}
+
+li {
+  width: auto;
+  margin-right: 20px;
+  margin-left: 5px;
+  color: #480c54;
+}
+
+.nav-link {
+  width: auto;
+  margin-right: 20px;
+}
+
+.btn {
+  width: 140px;
+}
