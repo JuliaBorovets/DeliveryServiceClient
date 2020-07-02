@@ -11,6 +11,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {OrdersComponent} from './pages/orders/ordersList/orders.component';
 import {NewOrderComponent} from './pages/orders/new-order/new-order.component';
+import {BankComponent} from './pages/bank/bank.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {NewOrderComponent} from './pages/orders/new-order/new-order.component';
     NotFoundComponent,
     UnauthorizedComponent,
     OrdersComponent,
-    NewOrderComponent
+    NewOrderComponent,
+    BankComponent
   ],
   imports: [
     BrowserModule,

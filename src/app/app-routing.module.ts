@@ -11,6 +11,7 @@ import {AuthGuard} from './guards/auth.guard';
 import {Role} from './models/role';
 import {OrdersComponent} from './pages/orders/ordersList/orders.component';
 import {NewOrderComponent} from './pages/orders/new-order/new-order.component';
+import {BankComponent} from './pages/bank/bank.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,15 @@ const routes: Routes = [
   {
     path: 'orders',
     component: OrdersComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: [Role.ADMIN, Role.USER]
+    }
+  },
+
+  {
+    path: 'cards',
+    component: BankComponent,
     canActivate: [AuthGuard],
     data: {
       roles: [Role.ADMIN, Role.USER]

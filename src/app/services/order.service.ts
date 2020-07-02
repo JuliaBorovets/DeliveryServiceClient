@@ -3,7 +3,6 @@ import {User} from '../models/user';
 import {Observable} from 'rxjs';
 
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {FindForm} from '../models/find-form';
 
 
 const API_URL = 'http://localhost:8080/api/shipments';
@@ -14,11 +13,9 @@ const API_URL = 'http://localhost:8080/api/shipments';
 export class OrderService {
 
   public currentUser: User;
-  public find: FindForm;
 
   constructor(private http: HttpClient) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    this.find = new FindForm();
   }
 
   headers() {

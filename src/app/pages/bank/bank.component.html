@@ -1,0 +1,73 @@
+<br>
+<section class="jumbotron2 text-center">
+  <div class="container">
+    <div class="btn-group mr-2" role="group" aria-label="First group">
+      <!--      <a class="btn btn-outline-primary" (click)="myCards()"> My cards </a>-->
+      <a class="btn btn-outline-primary active" (click)="newCard()"> New card </a>
+      <!--      <a class="btn btn-outline-primary" (click)="checks()"> Checks </a>-->
+    </div>
+  </div>
+</section>
+
+<div class="container py-5">
+
+  <div class="row">
+    <div class="col-lg-7 mx-auto">
+      <div class="bg-white rounded-lg shadow-sm p-5">
+        <ul class="nav bg-light nav-pills rounded-pill nav-fill mb-3">
+          <li class="nav-item">
+            <a data-toggle="pill" href="#nav-tab-card" class="nav-link active rounded-pill ">
+              <i class="fa fa-credit-card"></i>
+              Credit Card
+            </a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div id="nav-tab-card" class="tab-pane fade show active">
+
+            <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
+                  [ngClass]="f.submitted ? 'was-validated' : ''">
+
+              <div class="form-group" [ngClass]="{'has-error': f.submitted && !id.valid}">
+                <label for="id">Card number</label>
+                <div class="input-group">
+                  <input id="id" type="text" pattern="\d*" placeholder="Your card number" class="form-control"
+                         [(ngModel)]="card.id" #id="ngModel" name="id" maxlength="16" required/>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-8">
+                  <div class="form-group mb-4">
+                    <label><span class="hidden-xs">Expiration</span></label>
+                    <div class="input-group" [ngClass]="{'has-error': f.submitted && !exp.valid}">
+                      <input id="month" type="text" pattern="\d*" placeholder="Month" class="form-control"
+                             [(ngModel)]="card.expMonth" #exp="ngModel" maxlength="2" name="expMonth" required/>
+                      <input type="text" pattern="\d*" placeholder="Year" class="form-control"
+                             [(ngModel)]="card.expYear" #exp="ngModel" maxlength="4" name="expYear" required/>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                  <div class="form-group mb-4" [ngClass]="{'has-error': f.submitted && !ccv.valid}">
+                    <label data-toggle="tooltip" title="Three-digits code on the back of your card">CVV
+                      <i class="fa fa-question-circle"></i>
+                    </label>
+                    <input type="password" pattern="\d*" placeholder="CVV" class="form-control"
+                           [(ngModel)]="card.ccv" #ccv="ngModel" maxlength="3" name="ccv" required/>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm ">Confirm</button>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

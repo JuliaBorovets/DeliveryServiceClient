@@ -59,7 +59,6 @@ export class OrdersComponent implements OnInit {
 
   archiveOrder(order: Order) {
     this.orderService.archiveOrder(order.id).subscribe(() => {
-      // this.findAllOrders();
       order.status = Status.ARCHIVED;
     });
   }
