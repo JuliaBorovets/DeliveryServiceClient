@@ -1,0 +1,122 @@
+<section class="jumbotron2 text-center">
+  <div class="container">
+    <br>
+    <div class="btn-group mr-2" role="group" aria-label="First group">
+      <a class="btn btn-outline-primary" (click)="findAllOrders()"> Show all </a>
+      <a class="btn btn-outline-primary" (click)="findNotPaidOrders()"> Show not paid </a>
+      <a class="btn btn-outline-primary" (click)="findDeliveredOrders()"> Show delivered </a>
+      <a class="btn btn-outline-primary" (click)="findArchivedOrders()"> Show archived </a>
+    </div>
+  </div>
+</section>
+
+<br>
+<div>
+
+  <form #f="ngForm" (ngSubmit)="searchOrder()">
+
+    <div class="jumbotron2 text-center">
+      <div class="container" id="dataTable_filter">
+        <label>
+          <input type="number" min="0" class="form-control form-control-sm" placeholder="Search by id"
+                 [(ngModel)]="filter.id" ngModel="searchId">
+        </label>
+        <button type="submit" class="btn btn-default" style="display: none;">Search</button>
+      </div>
+      <br>
+    </div>
+  </form>
+
+  <div class="container py-5" *ngFor="let item of orderList ">
+
+    <div class="row">
+      <div class="col-lg-7 mx-auto">
+        <div class="bg-white rounded-lg shadow-sm p-5">
+
+          <ul class="nav bg-light nav-pills rounded-pill nav-fill mb-3">
+            <li class="nav-item">
+              <b>
+                <h4 data-toggle="pill">{{item.id}}</h4>
+              </b>
+            </li>
+
+          </ul>
+
+          <div class="tab-content">
+
+            <div id="nav-tab-card" class="tab-pane fade show active">
+
+
+              <div class="form-group">
+                <div> Status : {{item.status}}</div>
+              </div>
+
+              <div class="form-group">
+                <div>Type: {{item.type}}</div>
+              </div>
+
+              <div class="form-group">
+                <div> Weight : {{item.weight}}</div>
+              </div>
+
+              <div class="form-group">
+                <div>
+                  Destination: {{item.destination.cityFrom}} + ' - ' + {{item.destination.cityTo}}
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div>
+                  Shipping date: {{item.shippingDate}}
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <div>
+                  Delivery date: {{item.deliveryDate}}
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div>
+                  Shipping price : {{item.shippingPriceInCents}}
+                </div>
+              </div>
+
+              <!--              <div class="form-group text-center" >-->
+              <!--                <a class="button" th:if="${order.check} == null"-->
+              <!--                   th:href="@{/bank/pay/{id}(id=${order.id})}" th:text="#{to.pay}" th:size="14px">-->
+              <!--                </a>-->
+              <!--              </div>-->
+
+              <!--              <div class="form-group text-center" >-->
+              <!--                <a class="button" th:if="${order.check} != null"-->
+              <!--                   th:href="@{/bank/show_check/{orderId}(orderId=${order.check.id})}" th:size="14px"> Show check-->
+              <!--                </a>-->
+              <!--              </div>-->
+
+              <div class="form-group text-center" *ngIf="item.status == 'RECEIVED' ">
+                <button class="btn btn-outline-primary" (click)="archiveOrder(item)">
+                  Archive
+                </button>
+              </div>
+
+
+              <div class="form-group text-center" *ngIf="item.status == 'NOT_PAID' ">
+                <button class="btn btn-outline-primary" (click)="deleteOrder(item)">
+                  Delete
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+</div>

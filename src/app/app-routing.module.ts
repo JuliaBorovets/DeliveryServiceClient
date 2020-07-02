@@ -1,12 +1,16 @@
 import {NgModule} from '@angular/core';
 import {Router, RouterModule, Routes} from '@angular/router';
 
-import {LoginComponent} from './pages/login/login.component';
-import {RegisterComponent} from './pages/register/register.component';
+import {LoginComponent} from './pages/user/login/login.component';
+import {RegisterComponent} from './pages/user/register/register.component';
 // import {ProfileComponent} from './pages/profile/profile.component';
 import {HomeComponent} from './pages/home/home.component';
 import {NotFoundComponent} from './pages/not-found/not-found.component';
-import {UnauthorizedComponent} from './pages/unauthorized/unauthorized.component';
+import {UnauthorizedComponent} from './pages/user/unauthorized/unauthorized.component';
+import {AuthGuard} from './guards/auth.guard';
+import {Role} from './models/role';
+import {OrdersComponent} from './pages/orders/ordersList/orders.component';
+import {NewOrderComponent} from './pages/orders/new-order/new-order.component';
 
 
 const routes: Routes = [
@@ -14,6 +18,24 @@ const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+
+  {
+    path: 'orders',
+    component: OrdersComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: [Role.ADMIN, Role.USER]
+    }
+  },
+
+  {
+    path: 'newOrder',
+    component: NewOrderComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: [Role.ADMIN, Role.USER]
+    }
+  },
 
   // { path: 'profile',
   //   component: ProfileComponent,

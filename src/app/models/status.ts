@@ -1,8 +1,8 @@
-export class Status {
-  PAID = 'PAID';
-  NOT_PAID = 'NOT_PAID';
-  SHIPPED = 'SHIPPED';
-  DELIVERED = 'DELIVERED';
-  RECEIVED = 'RECEIVED';
-  ARCHIVED = 'ARCHIVED';
+export enum Status {
+  PAID = 'PAID',
+  NOT_PAID = 'NOT_PAID',
+  SHIPPED = 'SHIPPED',
+  DELIVERED = 'DELIVERED',
+  RECEIVED = 'RECEIVED',
+  ARCHIVED = 'ARCHIVED'
 }

@@ -23,6 +23,7 @@ export class UserService {
     return this.currentUserSubject.value;
   }
 
+
   login(user: User): Observable<any> {
     const headers = new HttpHeaders(
       user ? {
@@ -58,5 +59,4 @@ export class UserService {
   changeRole(id: number, role: string): Observable<any> {
     return this.http.patch(`${API_URL}/change/${id}/${role}`, {});
   }
-
 }
