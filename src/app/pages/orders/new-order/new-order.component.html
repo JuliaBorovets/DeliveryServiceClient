@@ -35,14 +35,16 @@
                     <div class="col-md-5 offset-md-1 form-group text-center"
                          [ngClass]="{'has-error': f.submitted && !weight.valid}">
                       <label for="weight">Weight:</label>
-                      <input type="number" id="weight" class="form-control" [(ngModel)]="order.weight" #weight="ngModel"
+                      <input type="number" name="weight" id="weight" class="form-control" [(ngModel)]="order.weight"
+                             #weight="ngModel"
                              min="0" required/>
                     </div>
 
                     <div class="col-md-5 offset-md-0 form-group text-center"
                          [ngClass]="{'has-error': f.submitted && !type.valid}">
                       <label for="type">Type:</label>
-                      <select id="type" class="form-control" [(ngModel)]="order.type" #type="ngModel" required>
+                      <select id="type" name="type" class="form-control" [(ngModel)]="order.type" #type="ngModel"
+                              required>
                         <option *ngFor="let item of types"
                                 value="{{item.id}}"
                         >  {{item.name}}
@@ -57,7 +59,7 @@
                          [ngClass]="{'has-error': f.submitted && !destinationF.valid}">
                       <label for="destinationsFrom">Destination from:</label>
                       <select id="destinationsFrom" class="form-control" [(ngModel)]="order.destinationCityFrom"
-                              #destinationF="ngModel" required>
+                              #destinationF="ngModel" name="destinationCityFrom" required>
                         <option *ngFor="let item of destinationsFrom"
                                 value="{{item}}"
                         >  {{item}}
@@ -70,7 +72,7 @@
                          [ngClass]="{'has-error': f.submitted && !destinationT.valid}">
                       <label for="destinationsTo">Destination to:</label>
                       <select id="destinationsTo" class="form-control" [(ngModel)]="order.destinationCityTo"
-                              #destinationT="ngModel" required>
+                              #destinationT="ngModel" name="destinationCityTo" required>
                         <option *ngFor="let item of destinationsTo"
                                 value="{{item}}"
                         >  {{item}}

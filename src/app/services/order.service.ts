@@ -45,7 +45,7 @@ export class OrderService {
   }
 
   createOrder(order: Object): Observable<Object> {
-    return this.http.post(API_URL, order);
+    return this.http.post(API_URL, order, {headers: this.headers()});
   }
 
   findAllTypes(): Observable<any> {
@@ -60,9 +60,9 @@ export class OrderService {
     return this.http.get(API_URL + '/destinations_to', {headers: this.headers()});
   }
 
-  findOrderById(filter: FindForm): Observable<any> {
-    console.log(filter.id);
-    return this.http.post(API_URL + `/find_order`, filter);
+  findOrderById(id: number): Observable<any> {
+    console.log(id);
+    return this.http.get(API_URL + '/find_order/' + id, {headers: this.headers()});
   }
 
   archiveOrder(id: number): Observable<any> {

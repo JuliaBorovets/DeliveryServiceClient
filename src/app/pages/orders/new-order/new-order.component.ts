@@ -11,8 +11,8 @@ import {OrderType} from '../../../models/orderType';
 export class NewOrderComponent implements OnInit {
 
   order: Order = new Order();
-  destinationsFrom: Array<string>;
-  destinationsTo: Array<string>;
+  destinationsFrom: Array<String>;
+  destinationsTo: Array<String>;
   types: Array<OrderType>;
   submitted = false;
   errorMessage: string;
@@ -28,19 +28,13 @@ export class NewOrderComponent implements OnInit {
 
   newOrder(): void {
     this.submitted = false;
-    this.order = new Order();
   }
 
   save() {
     this.orderService.createOrder(this.order)
       .subscribe(data => console.log(data), err => {
-        if (err && err.status === 409) {
-          this.errorMessage = 'Username is already exist';
-        } else {
           this.errorMessage = 'Unexpected error occurred. Error is: ' + err;
-        }
       });
-    this.order = new Order();
   }
 
   onSubmit() {
