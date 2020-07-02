@@ -3,7 +3,6 @@ import {Order} from '../../../models/order';
 import {User} from '../../../models/user';
 import {OrderService} from '../../../services/order.service';
 import {Router} from '@angular/router';
-import {FindForm} from '../../../models/find-form';
 import {Status} from '../../../models/status';
 
 @Component({
@@ -15,11 +14,8 @@ export class OrdersComponent implements OnInit {
 
   orderList: Array<Order>;
   foundOrder: Order;
-  filter: FindForm = new FindForm();
   id: number;
   currentUser: User;
-  errorMessage: string;
-  infoMessage: string;
 
   constructor(private orderService: OrderService, private router: Router) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -55,8 +51,9 @@ export class OrdersComponent implements OnInit {
   }
 
   searchOrder() {
-    this.orderService.findOrderById(this.filter).subscribe(data => {
-      this.foundOrder = data;
+    console.log(this.id);
+    this.orderService.findOrderById(this.id).subscribe(data => {
+      this.orderList = data as [];
     });
   }
 
