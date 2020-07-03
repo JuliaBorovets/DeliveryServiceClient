@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Order} from '../../../models/order';
 import {OrderService} from '../../../services/order.service';
 import {OrderType} from '../../../models/orderType';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-new-order',
@@ -17,7 +18,7 @@ export class NewOrderComponent implements OnInit {
   submitted = false;
   errorMessage: string;
 
-  constructor(private orderService: OrderService) {
+  constructor(private orderService: OrderService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -32,9 +33,11 @@ export class NewOrderComponent implements OnInit {
 
   save() {
     this.orderService.createOrder(this.order)
-      .subscribe(data => console.log(data), err => {
+      .subscribe(data =>
+          this.router.navigate(['/orders']),
+        err => {
           this.errorMessage = 'Unexpected error occurred. Error is: ' + err;
-      });
+        });
   }
 
   onSubmit() {

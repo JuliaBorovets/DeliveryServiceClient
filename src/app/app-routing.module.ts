@@ -9,10 +9,9 @@ import {NotFoundComponent} from './pages/not-found/not-found.component';
 import {UnauthorizedComponent} from './pages/user/unauthorized/unauthorized.component';
 import {AuthGuard} from './guards/auth.guard';
 import {Role} from './models/role';
-import {OrdersComponent} from './pages/orders/ordersList/orders.component';
+import {OrdersComponent} from './pages/orders/order-list/orders.component';
 import {NewOrderComponent} from './pages/orders/new-order/new-order.component';
 import {BankComponent} from './pages/bank/bank.component';
-
 
 const routes: Routes = [
 

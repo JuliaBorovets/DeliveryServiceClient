@@ -2,18 +2,22 @@
 <section class="jumbotron2 text-center">
   <div class="container">
     <div class="btn-group mr-2" role="group" aria-label="First group">
-      <!--      <a class="btn btn-outline-primary" (click)="myCards()"> My cards </a>-->
-      <a class="btn btn-outline-primary active" (click)="newCard()"> New card </a>
+      <a class="btn btn-outline-primary" (click)="newCard()"> New card </a>
       <!--      <a class="btn btn-outline-primary" (click)="checks()"> Checks </a>-->
     </div>
   </div>
 </section>
 
-<div class="container py-5">
+<div class="container py-5" *ngIf="isNew">
 
   <div class="row">
     <div class="col-lg-7 mx-auto">
       <div class="bg-white rounded-lg shadow-sm p-5">
+        <section class="jumbotron2 text-center">
+          <a data-toggle="pill" class="nav-link active rounded-pill " style=" margin-right: 0" (click)="close()"> <i
+            class="fas fa-times fa-2x "></i></a>
+
+        </section>
         <ul class="nav bg-light nav-pills rounded-pill nav-fill mb-3">
           <li class="nav-item">
             <a data-toggle="pill" href="#nav-tab-card" class="nav-link active rounded-pill ">
@@ -26,7 +30,7 @@
         <div class="tab-content">
           <div id="nav-tab-card" class="tab-pane fade show active">
 
-            <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
+            <form (ngSubmit)="f.form.valid && save()" #f="ngForm"
                   [ngClass]="f.submitted ? 'was-validated' : ''">
 
               <div class="form-group" [ngClass]="{'has-error': f.submitted && !id.valid}">
@@ -67,6 +71,100 @@
           </div>
 
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container py-5" *ngIf="isEdit">
+
+  <div class="row">
+    <div class="col-lg-7 mx-auto">
+      <div class="bg-white rounded-lg shadow-sm p-5">
+        <section class="jumbotron2 text-center">
+          <a data-toggle="pill" class="nav-link active rounded-pill " style=" margin-right: 0" (click)="close()"> <i
+            class="fas fa-times fa-2x "></i></a>
+
+        </section>
+        <ul class="nav bg-light nav-pills rounded-pill nav-fill mb-3">
+          <li class="nav-item">
+            <a data-toggle="pill" href="#nav-tab-card" class="nav-link active rounded-pill ">
+              <i class="fa fa-credit-card"></i>
+              Credit Card
+            </a>
+          </li>
+        </ul>
+        <div class="tab-content">
+
+          <div id="nav-tab-card" class="tab-pane fade show active">
+
+            <form (ngSubmit)="f.form.valid && update()" #f="ngForm"
+                  [ngClass]="f.submitted ? 'was-validated' : ''">
+
+              <div class="form-group">
+                <label for="card_number">Card number</label>
+                <div class="input-group">
+                  <input type="number" id="card_number" name="id" class="form-control"
+                         maxlength="16" [(ngModel)]="card.id" disabled/>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="form-group mb-4" [ngClass]="{'has-error': f.submitted && !balance.valid}">
+                    <label for="balance"> Balance : </label>
+                    <input type="text" name="balance" id="balance" pattern="[0-9]+([,.][0-9]+)?"
+                           placeholder="Your balance"
+                           class="form-control" maxlength="16" [(ngModel)]="card.balance" #balance="ngModel" required/>
+                  </div>
+                </div>
+
+              </div>
+
+              <button type="submit" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm "> Confirm
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+
+<div class="container-fluid text-center">
+
+  <div class="table_info shadow">
+
+    <div class="card-body text-center">
+      <div class="table-responsive table mt-2 text-center" id="dataTable">
+        <table class="table_info dataTable my-0 text-center" id="dataTable">
+          <thead>
+          <tr>
+            <th style="width: 60%">ID</th>
+            <th style="width: 30%">balance</th>
+            <th style="width: 10%"><em class="fa fa-cog"></em></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of cardList ">
+            <th scope="row" style="width: 60%"> {{item.id}}</th>
+            <th scope="row" style="width: 30%">{{item.balance}}</th>
+            <td style="width: 10%">
+              <button class="btn btn-default" (click)="onEdit(item.id, item.balance)">
+                <i class="fa fa-wrench" aria-hidden="true"></i>
+              </button>
+              <button class="btn btn-default" (click)="delete(item.id)">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+            </td>
+          </tr>
+
+        </table>
       </div>
     </div>
   </div>

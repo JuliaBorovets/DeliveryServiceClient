@@ -9,7 +9,7 @@ import {NotFoundComponent} from './pages/not-found/not-found.component';
 import {UnauthorizedComponent} from './pages/user/unauthorized/unauthorized.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {OrdersComponent} from './pages/orders/ordersList/orders.component';
+import {OrdersComponent} from './pages/orders/order-list/orders.component';
 import {NewOrderComponent} from './pages/orders/new-order/new-order.component';
 import {BankComponent} from './pages/bank/bank.component';
 

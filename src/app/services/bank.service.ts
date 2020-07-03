@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {User} from '../models/user';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {BankCard} from '../models/bankCard';
 
 const API_URL = 'http://localhost:8080/api/bank';
 
@@ -23,7 +24,19 @@ export class BankService {
     });
   }
 
-  createCard(card: Object): Observable<Object> {
+  createCard(card: any): Observable<any> {
     return this.http.post(API_URL, card, {headers: this.headers()});
+  }
+
+  findAllCards(): Observable<any> {
+    return this.http.get(API_URL, {headers: this.headers()});
+  }
+
+  updateCard(card: BankCard): Observable<any> {
+    return this.http.patch(API_URL, card, {headers: this.headers()});
+  }
+
+  deleteCard(id: number): Observable<any> {
+    return this.http.delete(API_URL + '/' + id, {headers: this.headers()});
   }
 }

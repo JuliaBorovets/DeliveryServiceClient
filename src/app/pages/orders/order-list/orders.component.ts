@@ -60,10 +60,13 @@ export class OrdersComponent implements OnInit {
   archiveOrder(order: Order) {
     this.orderService.archiveOrder(order.id).subscribe(() => {
       order.status = Status.ARCHIVED;
+      this.findAllOrders();
     });
   }
 
   deleteOrder(order: Order) {
-    this.orderService.deleteOrder(order.id);
+    this.orderService.deleteOrder(order.id).subscribe(() => {
+      this.findAllOrders();
+    });
   }
 }

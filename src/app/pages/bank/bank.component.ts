@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {BankCard} from '../../models/bankCard';
 import {BankService} from '../../services/bank.service';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-bank',
@@ -11,27 +10,60 @@ import {Router} from '@angular/router';
 export class BankComponent implements OnInit {
 
   card: BankCard = new BankCard();
-  submitted = false;
+  isNew = false;
+  isEdit = false;
+  cardList: Array<BankCard>;
 
-  constructor(private bankService: BankService, private router: Router) {
+  constructor(private bankService: BankService) {
   }
 
   ngOnInit(): void {
+    this.findAllCards();
   }
 
-  newCard(): void {
-    this.submitted = false;
-  }
-
-  save() {
-    this.bankService.createCard(this.card).subscribe(data => {
-      this.router.navigate(['/orders']);
+  findAllCards() {
+    this.bankService.findAllCards().subscribe(data => {
+      this.cardList = data;
     });
   }
 
-  onSubmit() {
-    this.submitted = true;
-    this.save();
+  newCard(): void {
+    this.card = new BankCard();
+    this.isNew = true;
+    this.isEdit = false;
   }
 
+  save() {
+    this.bankService.createCard(this.card).subscribe(() => {
+      this.findAllCards();
+      this.card = new BankCard();
+      this.isNew = false;
+    });
+  }
+
+  onEdit(id: number, balance: number) {
+    this.card.id = id;
+    this.card.balance = balance;
+    this.isNew = false;
+    this.isEdit = true;
+  }
+
+  update() {
+    this.bankService.updateCard(this.card).subscribe(() => {
+      this.findAllCards();
+      this.isEdit = false;
+    });
+  }
+
+  delete(id: number) {
+    this.bankService.deleteCard(id).subscribe(() => {
+      this.findAllCards();
+    });
+
+  }
+
+  close() {
+    this.isNew = false;
+    this.isEdit = false;
+  }
 }
