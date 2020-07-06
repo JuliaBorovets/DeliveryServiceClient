@@ -13,8 +13,9 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  max-width: 700px;
-  max-height: 300px;
+  max-width: 90%;
+  min-width: 90%;
+  max-height: 600px;
   font-size: 15px;
   overflow: auto;
 }

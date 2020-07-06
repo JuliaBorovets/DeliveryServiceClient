@@ -12,6 +12,8 @@ import {Role} from './models/role';
 import {OrdersComponent} from './pages/orders/order-list/orders.component';
 import {NewOrderComponent} from './pages/orders/new-order/new-order.component';
 import {BankComponent} from './pages/bank/bank.component';
+import {ReceiptComponent} from './pages/receipt/receipt.component';
+import {PayComponent} from './pages/pay/pay.component';
 
 const routes: Routes = [
 
@@ -46,12 +48,22 @@ const routes: Routes = [
     }
   },
 
-  // { path: 'profile',
-  //   component: ProfileComponent,
-  //   canActivate: [AuthGuard],
-  //   data: { roles: [Role.ADMIN, Role.USER]
-  //   }
-  // },
+  {
+    path: 'receipt',
+    component: ReceiptComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: [Role.ADMIN, Role.USER]
+    }
+  },
+  {
+    path: 'payOrder',
+    component: PayComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: [Role.ADMIN, Role.USER]
+    }
+  },
 
   {
     path: 'home',

@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {Order} from '../../../models/order';
 import {User} from '../../../models/user';
 import {OrderService} from '../../../services/order.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, NavigationExtras, Router} from '@angular/router';
 import {Status} from '../../../models/status';
 
 @Component({
@@ -10,14 +10,14 @@ import {Status} from '../../../models/status';
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.css']
 })
-export class OrdersComponent implements OnInit {
+export class OrdersComponent implements OnInit, AfterViewInit {
 
   orderList: Array<Order>;
-  foundOrder: Order;
-  id: number;
+  foundOrder: Order = new Order();
+  public id: number = Number();
   currentUser: User;
 
-  constructor(private orderService: OrderService, private router: Router) {
+  constructor(private orderService: OrderService, private route: ActivatedRoute, private router: Router) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
@@ -26,25 +26,35 @@ export class OrdersComponent implements OnInit {
     this.foundOrder = new Order();
   }
 
+  ngAfterViewInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.searchOrderById(params.id);
+    });
+  }
+
   findAllOrders() {
+    this.id = null;
     this.orderService.findAllOrders().subscribe(data => {
       this.orderList = data;
     });
   }
 
   findNotPaidOrders() {
+    this.id = null;
     this.orderService.findNotPaidOrders().subscribe(data => {
       this.orderList = data;
     });
   }
 
   findDeliveredOrders() {
+    this.id = null;
     this.orderService.findDeliveredOrders().subscribe(data => {
       this.orderList = data;
     });
   }
 
   findArchivedOrders() {
+    this.id = null;
     this.orderService.findArchivedOrders().subscribe(data => {
       this.orderList = data;
     });
@@ -53,6 +63,12 @@ export class OrdersComponent implements OnInit {
   searchOrder() {
     console.log(this.id);
     this.orderService.findOrderById(this.id).subscribe(data => {
+      this.orderList = data as [];
+    });
+  }
+
+  searchOrderById(id: number) {
+    this.orderService.findOrderById(id).subscribe(data => {
       this.orderList = data as [];
     });
   }
@@ -68,5 +84,26 @@ export class OrdersComponent implements OnInit {
     this.orderService.deleteOrder(order.id).subscribe(() => {
       this.findAllOrders();
     });
+  }
+
+  showReceipt(id: number) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        'id': id
+      }
+    };
+    this.router.navigate(['receipt'], navigationExtras);
+
+  }
+
+  pay(id: number, order: Order) {
+    console.log(order.shippingPriceInCents);
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        'id': id,
+        'price': order.shippingPriceInCents
+      }
+    };
+    this.router.navigate(['payOrder'], navigationExtras);
   }
 }

@@ -5,8 +5,8 @@
     <a class="nav-link" href="?language=en">English</a>
 
     <div class="btn-group mr-2" role="group" aria-label="First group">
-      <a class="btn btn-outline-primary active" *ngIf="!currentUser" href="/register"> Sign Up</a>
-      <a class="btn btn-outline-primary" *ngIf="!currentUser" href="/login"> Log in </a>
+      <a class="btn btn-outline-primary active" *ngIf="!currentUser" routerLink="/register"> Sign Up</a>
+      <a class="btn btn-outline-primary" *ngIf="!currentUser" routerLink="/login"> Log in </a>
     </div>
 
     <a *ngIf="currentUser" class="btn btn-outline-primary " (click)="logOut()">Logout</a>
@@ -16,27 +16,27 @@
   <ul class="nav nav-tabs">
 
     <li class="nav-item">
-      <a class="nav-link " href="/home">About us</a>
+      <a class="nav-link " routerLink="/home">About us</a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="/newOrder" *ngIf="currentUser"> Сreate new order</a>
+      <a class="nav-link" routerLink="/newOrder" *ngIf="currentUser"> Сreate new order</a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="/orders" *ngIf="currentUser">My shipments</a>
+      <a class="nav-link" routerLink="/orders" *ngIf="currentUser">My shipments</a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="/admin/to_ship" *ngIf="currentUser">Admin page</a>
+      <a class="nav-link" routerLink="/admin/to_ship" *ngIf="currentUser">Admin page</a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="/admin/statistics" *ngIf="currentUser">statistics</a>
+      <a class="nav-link" routerLink="/admin/statistics" *ngIf="currentUser">statistics</a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="/cards" *ngIf="currentUser">Cards </a>
+      <a class="nav-link" routerLink="/cards" *ngIf="currentUser">Cards </a>
     </li>
 
   </ul>

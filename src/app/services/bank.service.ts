@@ -3,8 +3,9 @@ import {User} from '../models/user';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {BankCard} from '../models/bankCard';
+import {Receipt} from '../models/receipt';
 
-const API_URL = 'http://localhost:8080/api/bank';
+const API_URL = 'http://localhost:8080/api/user/bank';
 
 @Injectable({
   providedIn: 'root'
@@ -39,4 +40,9 @@ export class BankService {
   deleteCard(id: number): Observable<any> {
     return this.http.delete(API_URL + '/' + id, {headers: this.headers()});
   }
+
+  pay(receipt: Receipt) {
+    return this.http.post(API_URL + '/pay', receipt, {headers: this.headers()});
+  }
+
 }

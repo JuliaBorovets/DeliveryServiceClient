@@ -5,7 +5,7 @@ import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 
-const API_URL = 'http://localhost:8080/api/shipments';
+const API_URL = 'http://localhost:8080/api/user/shipments';
 
 @Injectable({
   providedIn: 'root'

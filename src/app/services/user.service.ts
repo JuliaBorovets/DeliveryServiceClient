@@ -4,7 +4,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
 import {User} from '../models/user';
 import {map} from 'rxjs/operators';
 
-const API_URL = 'http://localhost:8080/api/user';
+const API_URL = 'http://localhost:8080/api';
 
 @Injectable({
   providedIn: 'root'

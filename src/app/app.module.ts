@@ -12,6 +12,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {OrdersComponent} from './pages/orders/order-list/orders.component';
 import {NewOrderComponent} from './pages/orders/new-order/new-order.component';
 import {BankComponent} from './pages/bank/bank.component';
+import {ReceiptComponent} from './pages/receipt/receipt.component';
+import {PayComponent} from './pages/pay/pay.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import {BankComponent} from './pages/bank/bank.component';
     UnauthorizedComponent,
     OrdersComponent,
     NewOrderComponent,
-    BankComponent
+    BankComponent,
+    ReceiptComponent,
+    PayComponent
   ],
   imports: [
     BrowserModule,

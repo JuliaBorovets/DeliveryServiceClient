@@ -1,0 +1,70 @@
+<div class="container py-5">
+
+  <div class="alert alert-danger" role="alert" style="margin-right: auto; margin-left: auto" *ngIf="errorMessage">
+    {{errorMessage}}
+  </div>
+
+  <div class="row">
+    <div class="col-lg-7 mx-auto">
+      <div class="bg-white rounded-lg shadow-sm p-5">
+        <ul class="nav bg-light nav-pills rounded-pill nav-fill mb-3">
+          <li class="nav-item">
+            <a data-toggle="pill" href="#nav-tab-card" class="nav-link active rounded-pill ">
+              <i class="fa fa-credit-card"></i>
+              Credit Card
+            </a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+
+          <div id="nav-tab-card" class="tab-pane fade show active">
+
+            <form (ngSubmit)="f.form.valid && pay()" #f="ngForm">
+
+              <div class="row">
+                <div class=" col-md-10 offset-md-1 form-group">
+                  <label>Order id</label>
+                  <div class="input-group">
+                    <input type="number" class="form-control" value="{{receipt.orderId}}" [(ngModel)]="receipt.orderId"
+                           name="orderId" disabled/>
+                  </div>
+                </div>
+
+              </div>
+              <div class="row">
+
+                <div class="col-md-10 offset-md-1 form-group ">
+                  <label>Card:</label>
+                  <select class="form-control" [(ngModel)]="receipt.bankCard" name="bankCard">
+                    <option *ngFor="let item of cards "
+                            value="{{item.id}}"> {{item.id}} </option>
+                  </select>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-10 offset-md-1 form-group">
+                  <label> Price </label>
+                  <input type="number" name="priceInCents" class="form-control"
+                         value="{{receipt.priceInCents}}" [(ngModel)]="receipt.priceInCents" disabled/>
+                </div>
+              </div>
+
+              <div class="row text-center">
+
+                <div class="pay form-group  text-center">
+                  <button type="submit" class="btn btn-primary btn-block rounded-pill shadow-sm">Confirm</button>
+                </div>
+
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
