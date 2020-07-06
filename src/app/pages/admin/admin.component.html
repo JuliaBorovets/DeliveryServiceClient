@@ -1,0 +1,80 @@
+<br>
+
+<section class="jumbotron2 text-center">
+  <div class="container">
+    <div class="btn-group mr-2" role="group" aria-label="First group">
+      <a class="btn btn-outline-primary" (click)="findAllPaidOrders()"> Ship orders </a>
+      <a class="btn btn-outline-primary" (click)="findAllShippedOrders()"> Deliver orders </a>
+      <a class="btn btn-outline-primary" (click)="findAllDeliveredOrders()"> Receive orders </a>
+      <!--      <a class="btn btn-outline-primary" (click)="users_list()"> Change roles </a>-->
+      <!--      <a class="btn btn-outline-primary" (click)="show_checks()"> Show checks </a>-->
+    </div>
+  </div>
+</section>
+
+
+<div>
+  <br>
+
+  <form #f="ngForm" (ngSubmit)="searchOrder()">
+    <div class="jumbotron2 text-center">
+      <div class="container" id="dataTable_filter">
+        <label>
+          <input type="number" min="0" class="form-control form-control-sm" placeholder="Search by id"
+                 [(ngModel)]="id" name="id" ngModel="searchId">
+        </label>
+        <button type="submit" class="btn btn-default" style="display: none;">Search</button>
+      </div>
+      <br>
+    </div>
+  </form>
+  <section class="jumbotron2 text-center">
+
+    <table class="table table-hover">
+
+      <thead>
+      <tr>
+        <th scope="col"> ID</th>
+        <th scope="col"> description</th>
+        <th scope="col"> Type</th>
+        <th scope="col"> Weight</th>
+        <th scope="col"> Destination</th>
+        <th scope="col"> Shipping Date</th>
+        <th scope="col"> Shipping price</th>
+        <th scope="col"> Shipping Status</th>
+        <th>Ship</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of orderList ">
+        <th> {{item.id}} </th>
+        <th> {{item.description}} </th>
+        <td> {{item.orderType.name}} </td>
+        <td> {{item.weight}} </td>
+        <td>{{item.destination.cityFrom}} - {{item.destination.cityTo}}</td>
+        <td> {{item.shippingDate}} </td>
+        <td> {{item.shippingPriceInCents}} </td>
+        <td> {{item.status}} </td>
+        <td>
+          <a class="btn btn-outline-primary" (click)="shipOrder(item.id)" *ngIf="item.status == 'PAID' ">
+            Ship
+          </a>
+          <a class="btn btn-outline-primary" (click)="deliverOrder(item.id)" *ngIf="item.status == 'SHIPPED' ">
+            Deliver
+          </a>
+          <a class="btn btn-outline-primary" (click)="receiveOrder(item.id)" *ngIf="item.status == 'DELIVERED' ">
+            Receive
+          </a>
+        </td>
+
+      </tr>
+      </tbody>
+    </table>
+
+    <br>
+
+    <br/>
+  </section>
+
+</div>

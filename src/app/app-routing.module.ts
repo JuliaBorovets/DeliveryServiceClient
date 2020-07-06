@@ -14,6 +14,7 @@ import {NewOrderComponent} from './pages/orders/new-order/new-order.component';
 import {BankComponent} from './pages/bank/bank.component';
 import {ReceiptComponent} from './pages/receipt/receipt.component';
 import {PayComponent} from './pages/pay/pay.component';
+import {AdminComponent} from './pages/admin/admin.component';
 
 const routes: Routes = [
 
@@ -62,6 +63,15 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: {
       roles: [Role.ADMIN, Role.USER]
+    }
+  },
+
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: [Role.ADMIN]
     }
   },
 
