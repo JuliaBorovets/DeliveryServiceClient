@@ -20,7 +20,7 @@ export class AppComponent {
 
   logOut() {
     this.userService.logOut().subscribe(data => {
-      this.router.navigate(['/login']);
+      this.router.navigate(['login']);
     });
   }
 }

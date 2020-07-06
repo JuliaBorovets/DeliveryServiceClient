@@ -14,6 +14,7 @@ import {NewOrderComponent} from './pages/orders/new-order/new-order.component';
 import {BankComponent} from './pages/bank/bank.component';
 import {ReceiptComponent} from './pages/receipt/receipt.component';
 import {PayComponent} from './pages/pay/pay.component';
+import {AdminComponent} from './pages/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {PayComponent} from './pages/pay/pay.component';
     NewOrderComponent,
     BankComponent,
     ReceiptComponent,
-    PayComponent
+    PayComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
