@@ -1,9 +1,9 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {Order} from '../../models/order';
-import {User} from '../../models/user';
-import {OrderService} from '../../services/order.service';
+import {Order} from '../../../models/order';
+import {User} from '../../../models/user';
+import {OrderService} from '../../../services/order.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AdminService} from '../../services/admin.service';
+import {AdminService} from '../../../services/admin.service';
 
 @Component({
   selector: 'app-admin',
@@ -84,6 +84,14 @@ export class AdminComponent implements OnInit, AfterViewInit {
     this.adminService.receiveOrder(id).subscribe(() => {
       this.findAllDeliveredOrders();
     });
+  }
+
+  userList() {
+    this.router.navigate(['userList']);
+  }
+
+  showChecks() {
+
   }
 
 }

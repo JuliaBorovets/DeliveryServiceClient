@@ -1,0 +1,51 @@
+<br>
+
+<div class="container-fluid text-center">
+
+  <br>
+  <div class="table_users shadow">
+
+    <div class="card-body text-center">
+
+      <div class="table-responsive table mt-2 text-center" id="dataTable">
+        <form (ngSubmit)="searchUser()">
+          <div class="form-group  mb-4">
+            <div class="text-md-right dataTables_filter" id="dataTable_filter">
+              <label>
+                <input type="text" class="form-control form-control-sm" placeholder="Search by login"
+                       [(ngModel)]="login" name="login" ngModel="searchId">
+              </label>
+              <button type="submit" class="btn btn-default" style="display: none;">Search</button>
+            </div>
+          </div>
+        </form>
+        <table class="table_users dataTable my-0 text-center" id="dataTable">
+          <thead>
+          <tr>
+            <th> ID</th>
+            <th> first name</th>
+            <th> last name</th>
+            <th> login</th>
+            <th> email</th>
+            <th> role</th>
+            <th><em class="fa fa-cog"></em></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of userList ">
+            <th>{{item.id}}</th>
+            <th>{{item.firstName}}</th>
+            <th>{{item.lastName}}</th>
+            <th>{{item.login}}</th>
+            <th>{{item.email}}</th>
+            <th>{{item.role}}</th>
+            <th>
+              <a (click)="changeRole()"> change </a>
+            </th>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<br>

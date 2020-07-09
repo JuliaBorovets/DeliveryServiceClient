@@ -1,0 +1,48 @@
+<br>
+<div>
+  <section class="jumbotron2 text-center">
+    <br>
+    <h3> Order checks </h3>
+    <br>
+    <div>
+      <form (click)="search()">
+        <div class="jumbotron2 text-center">
+          <div class="container" id="dataTable_filter">
+            <label>
+              <input type="number" class="form-control form-control-sm" [(ngModel)]="id" name="id" ngModel="searchId"
+                     required placeholder="Search by id">
+            </label>
+            <button type="submit" class="btn btn-default" style="display: none;">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <table class="table table-hover">
+
+      <thead>
+      <tr>
+        <th scope="col"> ID</th>
+        <th scope="col"> order id</th>
+        <th scope="col"> price</th>
+        <th scope="col"> user id</th>
+        <th scope="col"> bankCard id</th>
+        <th scope="col"> creation date</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let item of receiptList ">
+        <td> {{item.id}} </td>
+        <td> {{item.orderId}} </td>
+        <td> {{item.priceInCents}} </td>
+        <td> {{item.userId}} </td>
+        <td> {{item.bankCard}} </td>
+        <td> {{item.creationDate}} </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <br>
+    <br/>
+  </section>
+</div>

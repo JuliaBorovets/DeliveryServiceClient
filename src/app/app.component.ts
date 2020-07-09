@@ -11,6 +11,7 @@ import {User} from './models/user';
 export class AppComponent {
   title = 'angular-rest';
   currentUser: User;
+  isAdmin = false;
 
   constructor(private userService: UserService, private router: Router) {
     this.userService.currentUser.subscribe(data => {

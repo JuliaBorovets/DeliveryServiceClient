@@ -28,7 +28,9 @@ export class OrdersComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.route.queryParams.subscribe(params => {
-      this.searchOrderById(params.id);
+      if (params.id !== undefined) {
+        this.searchOrderById(params.id);
+      }
     });
   }
 

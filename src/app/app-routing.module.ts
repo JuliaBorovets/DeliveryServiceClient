@@ -14,7 +14,10 @@ import {NewOrderComponent} from './pages/orders/new-order/new-order.component';
 import {BankComponent} from './pages/bank/bank.component';
 import {ReceiptComponent} from './pages/receipt/receipt.component';
 import {PayComponent} from './pages/pay/pay.component';
-import {AdminComponent} from './pages/admin/admin.component';
+import {AdminComponent} from './pages/admin/admin-orders/admin.component';
+import {UserListComponent} from './pages/admin/user-list/user-list.component';
+import {ReceiptListComponent} from './pages/admin/receipt-list/receipt-list.component';
+import {StatisticsComponent} from './pages/admin/statistics/statistics.component';
 
 const routes: Routes = [
 
@@ -69,6 +72,33 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: [Role.ADMIN]
+    }
+  },
+
+  {
+    path: 'userList',
+    component: UserListComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: [Role.ADMIN]
+    }
+  },
+
+  {
+    path: 'receiptList',
+    component: ReceiptListComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: [Role.ADMIN]
+    }
+  },
+
+  {
+    path: 'statistics',
+    component: StatisticsComponent,
     canActivate: [AuthGuard],
     data: {
       roles: [Role.ADMIN]

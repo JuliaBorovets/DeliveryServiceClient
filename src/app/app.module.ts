@@ -14,7 +14,10 @@ import {NewOrderComponent} from './pages/orders/new-order/new-order.component';
 import {BankComponent} from './pages/bank/bank.component';
 import {ReceiptComponent} from './pages/receipt/receipt.component';
 import {PayComponent} from './pages/pay/pay.component';
-import {AdminComponent} from './pages/admin/admin.component';
+import {AdminComponent} from './pages/admin/admin-orders/admin.component';
+import {UserListComponent} from './pages/admin/user-list/user-list.component';
+import {ReceiptListComponent} from './pages/admin/receipt-list/receipt-list.component';
+import {StatisticsComponent} from './pages/admin/statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import {AdminComponent} from './pages/admin/admin.component';
     BankComponent,
     ReceiptComponent,
     PayComponent,
-    AdminComponent
+    AdminComponent,
+    UserListComponent,
+    ReceiptListComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
