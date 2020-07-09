@@ -70,6 +70,15 @@ const routes: Routes = [
   },
 
   {
+    path: 'profile',
+    component: HomeComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: [Role.ADMIN, Role.USER]
+    }
+  },
+
+  {
     path: 'admin',
     component: AdminComponent,
     canActivate: [AuthGuard],

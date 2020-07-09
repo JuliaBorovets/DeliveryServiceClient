@@ -41,6 +41,7 @@ import {StatisticsComponent} from './pages/admin/statistics/statistics.component
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    // CommonModule,
     FormsModule,
     ReactiveFormsModule
   ],

@@ -62,4 +62,17 @@ export class AdminService {
     return this.http.get(ADMIN_API_URL + '/show_all_receipts', {headers: this.headers()});
   }
 
+  createStatistics(): Observable<any> {
+    return this.http.get(ADMIN_API_URL, {headers: this.headers()});
+  }
+
+  numbersYear(): Observable<any> {
+    return this.http.get(ADMIN_API_URL + '/numbersYear', {headers: this.headers()});
+  }
+
+  earningsYear(): Observable<any> {
+    return this.http.get(ADMIN_API_URL + '/earningsYear', {headers: this.headers()});
+  }
+
+
 }

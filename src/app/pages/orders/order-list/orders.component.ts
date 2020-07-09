@@ -14,7 +14,7 @@ export class OrdersComponent implements OnInit, AfterViewInit {
 
   orderList: Array<Order>;
   foundOrder: Order = new Order();
-  public id: number = Number();
+  public id: number;
   currentUser: User;
 
   constructor(private orderService: OrderService, private route: ActivatedRoute, private router: Router) {
@@ -22,14 +22,19 @@ export class OrdersComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.findAllOrders();
-    this.foundOrder = new Order();
+    if (this.id !== undefined && this.id !== null) {
+      this.searchOrderById(this.id);
+    } else {
+      this.foundOrder = new Order();
+    }
   }
 
   ngAfterViewInit(): void {
     this.route.queryParams.subscribe(params => {
       if (params.id !== undefined) {
         this.searchOrderById(params.id);
+      } else {
+        this.foundOrder = new Order();
       }
     });
   }
@@ -64,9 +69,13 @@ export class OrdersComponent implements OnInit, AfterViewInit {
 
   searchOrder() {
     console.log(this.id);
-    this.orderService.findOrderById(this.id).subscribe(data => {
-      this.orderList = data as [];
-    });
+    if (this.id != null) {
+      this.orderService.findOrderById(this.id).subscribe(data => {
+        this.orderList = data as [];
+      });
+    } else {
+      this.findAllOrders();
+    }
   }
 
   searchOrderById(id: number) {

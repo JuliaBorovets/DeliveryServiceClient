@@ -1,1 +1,83 @@
-<p>statistics works!</p>
+<br>
+<div class="container-fluid text-center">
+
+  <div class="row text-center">
+    <div class="col-md-3 col-xl-3 mb-3 ">
+      <div class="card shadow border-center-primary py-2">
+        <div class="card-body">
+          <div class="row align-items-center no-gutters">
+            <div class="col mr-2 text-center">
+              <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>Earnings (last month)</span>
+              </div>
+              <div class="text-dark font-weight-bold h5 mb-0">
+                <span>{{statistics.earningsLastMonth}}</span>
+              </div>
+            </div>
+            <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-xl-3 mb-3">
+      <div class="card shadow border-left-success py-2">
+        <div class="card-body">
+          <div class="row align-items-center no-gutters">
+            <div class="col mr-2">
+              <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span>Earnings (year)</span></div>
+              <div class="text-dark font-weight-bold h5 mb-0">
+                <span>{{statistics.earningsYear}}</span>
+              </div>
+            </div>
+            <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-xl-3 mb-3">
+      <div class="card shadow border-left-warning py-2">
+        <div class="card-body">
+          <div class="row align-items-center no-gutters">
+            <div class="col mr-2">
+              <div class="text-uppercase text-warning font-weight-bold text-xs mb-1"><span>Delivers (last month)</span>
+              </div>
+              <div class="text-dark font-weight-bold h5 mb-0">
+                <span> {{statistics.deliversNumber}}</span>
+              </div>
+            </div>
+            <div class="col-auto"><i class="fas fa-truck fa-2x text-gray-300"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-xl-3 mb-4">
+      <div class="card shadow border-left-info py-2">
+        <div class="card-body">
+          <div class="row align-items-center no-gutters">
+            <div class="col mr-2">
+              <div class="text-uppercase text-info font-weight-bold text-xs mb-1"><span>Delivers(year)</span></div>
+              <div class="text-dark font-weight-bold h5 mb-0">
+                <span> {{statistics.deliversNumberYear}}</span>
+              </div>
+            </div>
+            <div class="col-auto"><i class="fas fa-truck fa-2x text-gray-300"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<section class="jumbotron2 text-center">
+  <div class="container">
+    <br>
+    <canvas id="numbersYear"></canvas>
+    <br>
+    <canvas id="earningsYear"></canvas>
+  </div>
+</section>
+<br>
+
+
