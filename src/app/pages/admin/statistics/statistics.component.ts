@@ -28,10 +28,12 @@ export class StatisticsComponent implements OnInit, AfterViewInit {
 
     this.adminService.numbersYear().subscribe(data => {
       this.numbersYear = data;
+      this.plot();
     });
 
     this.adminService.earningsYear().subscribe(data => {
       this.earningsYear = data;
+      this.plot();
     });
   }
 
@@ -60,23 +62,26 @@ export class StatisticsComponent implements OnInit, AfterViewInit {
     this.ctx = this.canvas.getContext('2d');
     let myChart1 = new Chart(this.ctx, {
       type: 'line',
-      label: 'My First dataset',
-      backgroundColor: 'red',
-      borderColor: 'red',
       data: {
         labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
         datasets: [{
-          label: 'Total cases.',
           data: this.earningsYear,
           borderWidth: 1
         }]
       },
       fill: false,
       options: {
-
-        title: {
-          display: true,
-          text: 'Chart.js Line Chart'
+        scales: {
+          yAxes: [{
+            ticks: {
+              fontSize: 54
+            }
+          }],
+          xAxes: [{
+            ticks: {
+              fontSize: 54
+            }
+          }]
         },
 
         legend: {
@@ -95,23 +100,26 @@ export class StatisticsComponent implements OnInit, AfterViewInit {
     this.ctx2 = this.canvas2.getContext('2d');
     let myChart2 = new Chart(this.ctx2, {
       type: 'line',
-      label: 'My First dataset',
-      backgroundColor: 'red',
-      borderColor: 'red',
       data: {
         labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
         datasets: [{
-          label: 'Total cases.',
           data: this.numbersYear,
           borderWidth: 1
         }]
       },
       fill: false,
       options: {
-
-        title: {
-          display: true,
-          text: 'Chart.js Line Chart'
+        scales: {
+          yAxes: [{
+            ticks: {
+              fontSize: 54
+            }
+          }],
+          xAxes: [{
+            ticks: {
+              fontSize: 54
+            }
+          }]
         },
 
         legend: {

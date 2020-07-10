@@ -20,12 +20,12 @@
     </li>
 
     <li class="nav-item" *ngIf="currentUser">
-      <a href="#">Admin page</a>
+      <a routerLink="/admin">Admin page</a>
       <ul class="dropdown">
-        <li class="nav-item"><a class="nav-link" routerLink="/admin">shipments</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/userList">users</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/receiptList">receipts</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/statistics">statistics</a></li>
+        <li class="nav-item menu"><a class="nav-link" routerLink="/admin">shipments</a></li>
+        <li class="nav-item menu"><a class="nav-link" routerLink="/userList">users</a></li>
+        <li class="nav-item menu"><a class="nav-link" routerLink="/receiptList">receipts</a></li>
+        <li class="nav-item menu"><a class="nav-link" routerLink="/statistics">statistics</a></li>
       </ul>
     </li>
 

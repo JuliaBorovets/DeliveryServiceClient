@@ -6,10 +6,10 @@
   <div class="table_users shadow">
 
     <div class="card-body text-center">
-
       <div class="table-responsive table mt-2 text-center" id="dataTable">
         <form (ngSubmit)="searchUser()">
-          <div class="form-group  mb-4">
+          <div class="form-group  mb-2">
+            <h4>Users</h4>
             <div class="text-md-right dataTables_filter" id="dataTable_filter">
               <label>
                 <input type="text" class="form-control form-control-sm" placeholder="Search by login"
@@ -40,7 +40,7 @@
             <th>{{item.email}}</th>
             <th>{{item.role}}</th>
             <th>
-              <a (click)="changeRole()"> change </a>
+              <a class="btn btn-outline-primary" (click)="changeRole(item.id, item.role)"> change role</a>
             </th>
           </tr>
         </table>

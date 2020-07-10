@@ -18,6 +18,7 @@ import {AdminComponent} from './pages/admin/admin-orders/admin.component';
 import {UserListComponent} from './pages/admin/user-list/user-list.component';
 import {ReceiptListComponent} from './pages/admin/receipt-list/receipt-list.component';
 import {StatisticsComponent} from './pages/admin/statistics/statistics.component';
+import {InfoComponent} from './pages/user/info/info.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {StatisticsComponent} from './pages/admin/statistics/statistics.component
     AdminComponent,
     UserListComponent,
     ReceiptListComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,

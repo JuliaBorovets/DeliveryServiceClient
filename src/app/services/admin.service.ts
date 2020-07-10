@@ -74,5 +74,8 @@ export class AdminService {
     return this.http.get(ADMIN_API_URL + '/earningsYear', {headers: this.headers()});
   }
 
+  changeRole(id: number, role: string) {
+    return this.http.patch(`${USER_API_URL}/change/${id}/${role}`, {}, {headers: this.headers()});
+  }
 
 }

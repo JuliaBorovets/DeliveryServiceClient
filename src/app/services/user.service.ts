@@ -56,7 +56,7 @@ export class UserService {
     return this.http.post(API_URL, user);
   }
 
-  changeRole(id: number, role: string): Observable<any> {
-    return this.http.patch(`${API_URL}/change/${id}/${role}`, {});
+  updateUserInfo(user: User): Observable<any> {
+    return this.http.put(API_URL + '/update', user, {});
   }
 }

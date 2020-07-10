@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {User} from '../../../models/user';
 import {AdminService} from '../../../services/admin.service';
+import {Role} from '../../../models/role';
 
 @Component({
   selector: 'app-user-list',
@@ -30,8 +31,12 @@ export class UserListComponent implements OnInit {
     });
   }
 
-  changeRole() {
-
+  changeRole(id: number, role: string) {
+    const newRole = role === Role.ADMIN ? Role.USER : Role.ADMIN;
+    console.log(newRole);
+    this.adminService.changeRole(id, newRole).subscribe(data => {
+      this.findAllUsers();
+    });
   }
 
   searchUser() {
