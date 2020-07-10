@@ -18,6 +18,7 @@ import {AdminComponent} from './pages/admin/admin-orders/admin.component';
 import {UserListComponent} from './pages/admin/user-list/user-list.component';
 import {ReceiptListComponent} from './pages/admin/receipt-list/receipt-list.component';
 import {StatisticsComponent} from './pages/admin/statistics/statistics.component';
+import {InfoComponent} from './pages/user/info/info.component';
 
 const routes: Routes = [
 
@@ -72,6 +73,15 @@ const routes: Routes = [
   {
     path: 'profile',
     component: HomeComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: [Role.ADMIN, Role.USER]
+    }
+  },
+
+  {
+    path: 'user_info',
+    component: InfoComponent,
     canActivate: [AuthGuard],
     data: {
       roles: [Role.ADMIN, Role.USER]
