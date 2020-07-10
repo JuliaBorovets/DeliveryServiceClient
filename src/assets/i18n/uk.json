@@ -21,22 +21,58 @@
     "SHOW_DELIVERED": "Доставлені",
     "SHOW_ARCHIVED": "Архівовані",
     "SEARCH": "пошук по id",
-    "STATUS": "Статус :",
-    "TYPE": "Тип :",
-    "WEIGHT": "Вага :",
-    "DESTINATION": "Відстань :",
-    "SHIPPING_DATE": "Дата відправлення :",
-    "DELIVERY_DATE": "Дата доставки :",
-    "SHIPPING_PRICE": "Ціна :",
+    "STATUS": "Статус",
+    "TYPE": "Тип",
+    "WEIGHT": "Вага",
+    "DESTINATION": "Відстань",
+    "DESCRIPTION": "Опис",
+    "SHIPPING_DATE": "Дата відправлення",
+    "DELIVERY_DATE": "Дата доставки",
+    "SHIPPING_PRICE": "Ціна",
     "SHOW_RECEIPT": "Чек",
     "PAY": "Оплатити",
     "ARCHIVE": "Архівувати",
     "DELETE": "Видалити",
-    "STATUS_PAID": "Статус : Оплачено",
-    "STATUS_NOT_PAID": "Статус : Не оплачено",
-    "STATUS_SHIPPED": "Статус : Відправлено",
-    "STATUS_DELIVERED": "Статус : Доставлено",
-    "STATUS_RECEIVED": "Статус : Отримано",
-    "STATUS_ARCHIVED": "Статус : Архівовано"
+    "STATUS_PAID": "Оплачено",
+    "STATUS_NOT_PAID": "Не оплачено",
+    "STATUS_SHIPPED": "Відправлено",
+    "STATUS_DELIVERED": "Доставлено",
+    "STATUS_RECEIVED": "Отримано",
+    "STATUS_ARCHIVED": "Архівовано"
+  },
+  "ADMIN": {
+    "ORDERS": {
+      "SHIP": "Відправити",
+      "DELIVER": "Доставити",
+      "RECEIVE": "Отримати",
+      "SEARCH": "пошук по id"
+    },
+    "USERS": {
+      "SEARCH": "Знайти по логіну",
+      "FIRST_NAME": "Ім'я",
+      "LAST_NAME": "Прізвище",
+      "LOGIN": "Логін",
+      "EMAIL": "e-mail",
+      "ROLE": "Роль",
+      "CHANGE_ROLE": "Змінити роль",
+      "ROLE_USER": "Користувач",
+      "ROLE_ADMIN": "Адмін"
+    },
+    "RECEIPTS": {
+      "SEARCH": "Знайти по ID",
+      "ORDER_ID": "Замовлення",
+      "PRICE": "Ціна",
+      "USER_ID": "Користувач",
+      "BANK_ID": "Картка",
+      "CREATION": "Дата"
+    },
+    "STATISTICS": {
+      "EARNINGS_LAST_MONTH": "Прибуток (місяць)",
+      "EARNINGS_YEAR": "Прибуток (рік)",
+      "DELIVERS_LAST_MONTH": "Доставки (місяць)",
+      "DELIVERS_YEAR": "Доставки (рік)",
+      "NUMBER_ORDERS": "Кількість замовлень",
+      "ANNUAL_INCOME": "Річний прибуток"
+    }
   }
 }

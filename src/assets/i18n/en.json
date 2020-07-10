@@ -21,22 +21,58 @@
     "SHOW_DELIVERED": "Delivered",
     "SHOW_ARCHIVED": "Archived",
     "SEARCH": "search by id",
-    "STATUS": "Status :",
-    "TYPE": "Type :",
-    "WEIGHT": "Weight :",
-    "DESTINATION": "Destination :",
-    "SHIPPING_DATE": "Shipping date :",
-    "DELIVERY_DATE": "Delivery date :",
-    "SHIPPING_PRICE": "Shipping price :",
+    "STATUS": "Status",
+    "TYPE": "Type",
+    "WEIGHT": "Weight",
+    "DESTINATION": "Destination",
+    "DESCRIPTION": "Description",
+    "SHIPPING_DATE": "Shipping date",
+    "DELIVERY_DATE": "Delivery date",
+    "SHIPPING_PRICE": "Shipping price",
     "SHOW_RECEIPT": "Show receipt",
     "PAY": "Pay",
     "ARCHIVE": "Archive",
     "DELETE": "Delete",
-    "STATUS_PAID": "Status : Paid",
-    "STATUS_NOT_PAID": "Status : Not paid",
-    "STATUS_SHIPPED": "Status : Shipped",
-    "STATUS_DELIVERED": "Status : Delivered",
-    "STATUS_RECEIVED": "Status : Received",
-    "STATUS_ARCHIVED": "Status : Archived"
+    "STATUS_PAID": "Paid",
+    "STATUS_NOT_PAID": "Not paid",
+    "STATUS_SHIPPED": "Shipped",
+    "STATUS_DELIVERED": "Delivered",
+    "STATUS_RECEIVED": "Received",
+    "STATUS_ARCHIVED": "Archived"
+  },
+  "ADMIN": {
+    "ORDERS": {
+      "SHIP": "Ship",
+      "DELIVER": "Deliver",
+      "RECEIVE": "Receive",
+      "SEARCH": "search by id"
+    },
+    "USERS": {
+      "SEARCH": "Search by login",
+      "FIRST_NAME": "First name",
+      "LAST_NAME": "Last name",
+      "LOGIN": "Login",
+      "EMAIL": "Email",
+      "ROLE": "Role",
+      "CHANGE_ROLE": "Change role",
+      "ROLE_USER": "User",
+      "ROLE_ADMIN": "Admin"
+    },
+    "RECEIPTS": {
+      "SEARCH": "Search by ID",
+      "ORDER_ID": "Order",
+      "PRICE": "Price",
+      "USER_ID": "User",
+      "BANK_ID": "Bank card",
+      "CREATION": "Date"
+    },
+    "STATISTICS": {
+      "EARNINGS_LAST_MONTH": "Earnings (month)",
+      "EARNINGS_YEAR": "Earnings (year)",
+      "DELIVERS_LAST_MONTH": "Delivers (month)",
+      "DELIVERS_YEAR": "Delivers (year)",
+      "NUMBER_ORDERS": "Number of orders",
+      "ANNUAL_INCOME": "Annual income"
+    }
   }
 }

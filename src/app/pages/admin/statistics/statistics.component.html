@@ -7,7 +7,8 @@
         <div class="card-body">
           <div class="row align-items-center no-gutters">
             <div class="col mr-2 text-center">
-              <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>Earnings (last month)</span>
+              <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">
+                <span> {{'ADMIN.STATISTICS.EARNINGS_LAST_MONTH' | translate}} </span>
               </div>
               <div class="text-dark font-weight-bold h5 mb-0">
                 <span>{{statistics.earningsLastMonth}}</span>
@@ -23,7 +24,9 @@
         <div class="card-body">
           <div class="row align-items-center no-gutters">
             <div class="col mr-2">
-              <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span>Earnings (year)</span></div>
+              <div class="text-uppercase text-success font-weight-bold text-xs mb-1">
+                <span> {{'ADMIN.STATISTICS.EARNINGS_YEAR' | translate}} </span>
+              </div>
               <div class="text-dark font-weight-bold h5 mb-0">
                 <span>{{statistics.earningsYear}}</span>
               </div>
@@ -39,7 +42,8 @@
         <div class="card-body">
           <div class="row align-items-center no-gutters">
             <div class="col mr-2">
-              <div class="text-uppercase text-warning font-weight-bold text-xs mb-1"><span>Delivers (last month)</span>
+              <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
+                <span> {{'ADMIN.STATISTICS.DELIVERS_LAST_MONTH' | translate}} </span>
               </div>
               <div class="text-dark font-weight-bold h5 mb-0">
                 <span> {{statistics.deliversNumber}}</span>
@@ -56,7 +60,9 @@
         <div class="card-body">
           <div class="row align-items-center no-gutters">
             <div class="col mr-2">
-              <div class="text-uppercase text-info font-weight-bold text-xs mb-1"><span>Delivers(year)</span></div>
+              <div class="text-uppercase text-info font-weight-bold text-xs mb-1">
+                <span> {{'ADMIN.STATISTICS.DELIVERS_YEAR' | translate}} </span>
+              </div>
               <div class="text-dark font-weight-bold h5 mb-0">
                 <span> {{statistics.deliversNumberYear}}</span>
               </div>
@@ -73,11 +79,11 @@
 <section class="jumbotron2 text-center">
   <div class="container">
     <br>
-    <h4> Number of orders</h4>
+    <h4> {{'ADMIN.STATISTICS.NUMBER_ORDERS' | translate}} </h4>
     <canvas id="numbersYear"></canvas>
     <br>
     <br>
-    <h4> Annual income </h4>
+    <h4> {{'ADMIN.STATISTICS.ANNUAL_INCOME' | translate}} </h4>
     <canvas id="earningsYear"></canvas>
   </div>
 </section>

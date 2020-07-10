@@ -47,34 +47,38 @@
             <div id="nav-tab-card" class="tab-pane fade show active">
 
               <div class="form-group">
-                <div> {{("ORDERS.STATUS_" + item.status) | translate}} </div>
+                <div> {{"ORDERS.STATUS" | translate}} : {{("ORDERS.STATUS_" + item.status) | translate}} </div>
               </div>
 
               <div class="form-group">
-                <div>{{'ORDERS.TYPE' | translate}} {{item.orderType.name}}</div>
+                <div>{{'ORDERS.TYPE' | translate}} : {{item.orderType.name}}</div>
               </div>
 
               <div class="form-group">
-                <div> {{'ORDERS.WEIGHT' | translate}} {{item.weight}}</div>
+                <div> {{'ORDERS.WEIGHT' | translate}} : {{item.weight}}</div>
               </div>
 
               <div class="form-group">
                 <div>
-                  {{'ORDERS.DESTINATION' | translate}} {{item.destination.cityFrom}} - {{item.destination.cityTo}}
+                  {{'ORDERS.DESTINATION' | translate}} : {{item.destination.cityFrom}} - {{item.destination.cityTo}}
                 </div>
               </div>
 
               <div class="form-group">
-                <div> {{'ORDERS.SHIPPING_DATE' | translate}} {{item.shippingDate}} </div>
+                <div> {{'ORDERS.SHIPPING_DATE' | translate}} : {{item.shippingDate}} </div>
               </div>
 
 
               <div class="form-group">
-                <div> {{'ORDERS.DELIVERY_DATE' | translate}} {{item.deliveryDate}} </div>
+                <div> {{'ORDERS.DELIVERY_DATE' | translate}} : {{item.deliveryDate}} </div>
               </div>
 
               <div class="form-group">
-                <div> {{'ORDERS.SHIPPING_PRICE' | translate}} {{item.shippingPriceInCents}} </div>
+                <div> {{'ORDERS.SHIPPING_PRICE' | translate}} : {{item.shippingPriceInCents}} </div>
+              </div>
+
+              <div class="form-group">
+                <div> {{("ORDERS.DESCRIPTION") | translate}} : {{item.description}} </div>
               </div>
 
               <div class="form-group text-center" *ngIf="item.receipt != null ">
