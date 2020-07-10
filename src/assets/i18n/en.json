@@ -1,0 +1,42 @@
+{
+  "GENERAL": {
+    "ABOUT_US": "About us",
+    "ADMIN": "Admin page",
+    "ADMIN_PAGE": "Orders",
+    "USER_LIST": "Users",
+    "RECEIPT_LIST": "Receipts",
+    "STATISTICS": "Statistics",
+    "NEW_ORDER": "New order",
+    "MY_ORDERS": "My orders",
+    "BANK": "Bank",
+    "USER_INFO": "User info",
+    "LOGOUT": "Logout",
+    "LOG_IN": "Log in",
+    "SIGN_UP": "Sign up",
+    "COPYRIGHTS": "Copyright © 2020"
+  },
+  "ORDERS": {
+    "SHOW_ALL": "All",
+    "SHOW_NOT_PAID": "Not paid",
+    "SHOW_DELIVERED": "Delivered",
+    "SHOW_ARCHIVED": "Archived",
+    "SEARCH": "search by id",
+    "STATUS": "Status :",
+    "TYPE": "Type :",
+    "WEIGHT": "Weight :",
+    "DESTINATION": "Destination :",
+    "SHIPPING_DATE": "Shipping date :",
+    "DELIVERY_DATE": "Delivery date :",
+    "SHIPPING_PRICE": "Shipping price :",
+    "SHOW_RECEIPT": "Show receipt",
+    "PAY": "Pay",
+    "ARCHIVE": "Archive",
+    "DELETE": "Delete",
+    "STATUS_PAID": "Status : Paid",
+    "STATUS_NOT_PAID": "Status : Not paid",
+    "STATUS_SHIPPED": "Status : Shipped",
+    "STATUS_DELIVERED": "Status : Delivered",
+    "STATUS_RECEIVED": "Status : Received",
+    "STATUS_ARCHIVED": "Status : Archived"
+  }
+}

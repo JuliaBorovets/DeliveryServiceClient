@@ -1,48 +1,53 @@
 <div id="container">
   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom shadow-sm">
     <h5 class="p_name mr-md-auto font-weight-bold ">Delivery Service</h5>
-    <a class="nav-link" href="?language=uk">Українська</a>
-    <a class="nav-link" href="?language=en">English</a>
+
+    <a class="nav-link" (click)="changeLang('uk')">Українська</a>
+    <a class="nav-link" (click)="changeLang('en')">English</a>
 
     <div class="btn-group mr-2" role="group" aria-label="First group">
-      <a class="btn btn-outline-primary active" *ngIf="!currentUser" routerLink="/register"> Sign Up</a>
-      <a class="btn btn-outline-primary" *ngIf="!currentUser" routerLink="/login"> Log in </a>
+      <a class="btn btn-outline-primary active" *ngIf="!currentUser"
+         routerLink="/register">{{'GENERAL.SIGN_UP' | translate}}</a>
+      <a class="btn btn-outline-primary" *ngIf="!currentUser" routerLink="/login"> {{'GENERAL.LOG_IN' | translate}} </a>
     </div>
 
-    <a *ngIf="currentUser" class="btn btn-outline-primary " (click)="logOut()">Logout</a>
+    <a *ngIf="currentUser" class="btn btn-outline-primary " (click)="logOut()">{{'GENERAL.LOGOUT' | translate}}</a>
 
   </div>
 
   <ul class="nav nav-tabs">
 
     <li class="nav-item">
-      <a class="nav-link " routerLink="/home">About us</a>
+      <a class="nav-link " routerLink="/home">{{'GENERAL.ABOUT_US' | translate}}</a>
     </li>
 
     <li class="nav-item" *ngIf="currentUser">
-      <a routerLink="/admin">Admin page</a>
+      <a routerLink="/admin">{{'GENERAL.ADMIN' | translate}}</a>
       <ul class="dropdown">
-        <li class="nav-item menu"><a class="nav-link" routerLink="/admin">shipments</a></li>
-        <li class="nav-item menu"><a class="nav-link" routerLink="/userList">users</a></li>
-        <li class="nav-item menu"><a class="nav-link" routerLink="/receiptList">receipts</a></li>
-        <li class="nav-item menu"><a class="nav-link" routerLink="/statistics">statistics</a></li>
+        <li class="nav-item menu"><a class="nav-link" routerLink="/admin">{{'GENERAL.ADMIN_PAGE' | translate}}</a></li>
+        <li class="nav-item menu"><a class="nav-link" routerLink="/userList">{{'GENERAL.USER_LIST' | translate}}</a>
+        </li>
+        <li class="nav-item menu"><a class="nav-link"
+                                     routerLink="/receiptList">{{'GENERAL.RECEIPT_LIST' | translate}}</a></li>
+        <li class="nav-item menu"><a class="nav-link" routerLink="/statistics">{{'GENERAL.STATISTICS' | translate}}</a>
+        </li>
       </ul>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" routerLink="/newOrder" *ngIf="currentUser"> Сreate new order</a>
+      <a class="nav-link" routerLink="/newOrder" *ngIf="currentUser"> {{'GENERAL.NEW_ORDER' | translate}} </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" routerLink="/orders" *ngIf="currentUser">My shipments</a>
+      <a class="nav-link" routerLink="/orders" *ngIf="currentUser"> {{'GENERAL.MY_ORDERS' | translate}} </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" routerLink="/cards" *ngIf="currentUser">Cards </a>
+      <a class="nav-link" routerLink="/cards" *ngIf="currentUser"> {{'GENERAL.BANK' | translate}} </a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" routerLink="/user_info" *ngIf="currentUser"> User info </a>
+      <a class="nav-link" routerLink="/user_info" *ngIf="currentUser"> {{'GENERAL.USER_INFO' | translate}} </a>
     </li>
 
   </ul>
@@ -52,6 +57,6 @@
 
 <footer class="bg-white sticky-footer">
   <div class="container my-auto">
-    <div class="text-center my-auto copyright"><span>Copyright © 2020</span></div>
+    <div class="text-center my-auto copyright"><span> {{'GENERAL.COPYRIGHTS' | translate}} </span></div>
   </div>
 </footer>

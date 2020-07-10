@@ -1,0 +1,42 @@
+{
+  "GENERAL": {
+    "ABOUT_US": "Про нас",
+    "ADMIN": "Сторінка адміна",
+    "ADMIN_PAGE": "Замовлення",
+    "USER_LIST": "Користувачі",
+    "RECEIPT_LIST": "Чеки",
+    "STATISTICS": "Статистика",
+    "NEW_ORDER": "Створити замовлення",
+    "MY_ORDERS": "Мої замовлення",
+    "BANK": "Банк",
+    "USER_INFO": "Моя інформація",
+    "LOGOUT": "Вийти",
+    "LOG_IN": "Увійти",
+    "SIGN_UP": "Зареєструватися",
+    "COPYRIGHTS": "Всі права захищено © 2020"
+  },
+  "ORDERS": {
+    "SHOW_ALL": "Всі",
+    "SHOW_NOT_PAID": "Неоплачені",
+    "SHOW_DELIVERED": "Доставлені",
+    "SHOW_ARCHIVED": "Архівовані",
+    "SEARCH": "пошук по id",
+    "STATUS": "Статус :",
+    "TYPE": "Тип :",
+    "WEIGHT": "Вага :",
+    "DESTINATION": "Відстань :",
+    "SHIPPING_DATE": "Дата відправлення :",
+    "DELIVERY_DATE": "Дата доставки :",
+    "SHIPPING_PRICE": "Ціна :",
+    "SHOW_RECEIPT": "Чек",
+    "PAY": "Оплатити",
+    "ARCHIVE": "Архівувати",
+    "DELETE": "Видалити",
+    "STATUS_PAID": "Статус : Оплачено",
+    "STATUS_NOT_PAID": "Статус : Не оплачено",
+    "STATUS_SHIPPED": "Статус : Відправлено",
+    "STATUS_DELIVERED": "Статус : Доставлено",
+    "STATUS_RECEIVED": "Статус : Отримано",
+    "STATUS_ARCHIVED": "Статус : Архівовано"
+  }
+}

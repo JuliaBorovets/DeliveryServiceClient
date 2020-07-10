@@ -2,10 +2,10 @@
   <div class="container">
     <br>
     <div class="btn-group mr-2" role="group" aria-label="First group">
-      <a class="btn btn-outline-primary" (click)="findAllOrders()"> Show all </a>
-      <a class="btn btn-outline-primary" (click)="findNotPaidOrders()"> Show not paid </a>
-      <a class="btn btn-outline-primary" (click)="findDeliveredOrders()"> Show delivered </a>
-      <a class="btn btn-outline-primary" (click)="findArchivedOrders()"> Show archived </a>
+      <a class="btn btn-outline-primary" (click)="findAllOrders()"> {{'ORDERS.SHOW_ALL' | translate}} </a>
+      <a class="btn btn-outline-primary" (click)="findNotPaidOrders()"> {{'ORDERS.SHOW_NOT_PAID' | translate}} </a>
+      <a class="btn btn-outline-primary" (click)="findDeliveredOrders()"> {{'ORDERS.SHOW_DELIVERED' | translate}} </a>
+      <a class="btn btn-outline-primary" (click)="findArchivedOrders()"> {{'ORDERS.SHOW_ARCHIVED' | translate}} </a>
     </div>
   </div>
 </section>
@@ -18,8 +18,8 @@
     <div class="jumbotron2 text-center">
       <div class="container" id="dataTable_filter">
         <label>
-          <input type="number" min="0" class="form-control form-control-sm" placeholder="Search by id"
-                 [(ngModel)]="id" name="id" ngModel="searchId">
+          <input type="number" min="0" class="form-control form-control-sm"
+                 placeholder="{{'ORDERS.SEARCH' | translate}}" [(ngModel)]="id" name="id" ngModel="searchId">
         </label>
         <button type="submit" class="btn btn-default" style="display: none;">Search</button>
       </div>
@@ -46,66 +46,59 @@
 
             <div id="nav-tab-card" class="tab-pane fade show active">
 
-
               <div class="form-group">
-                <div> Status : {{item.status}}</div>
+                <div> {{("ORDERS.STATUS_" + item.status) | translate}} </div>
               </div>
 
               <div class="form-group">
-                <div>Type: {{item.orderType.name}}</div>
+                <div>{{'ORDERS.TYPE' | translate}} {{item.orderType.name}}</div>
               </div>
 
               <div class="form-group">
-                <div> Weight : {{item.weight}}</div>
-              </div>
-
-              <div class="form-group">
-                <div>
-                  Destination: {{item.destination.cityFrom}} - {{item.destination.cityTo}}
-                </div>
+                <div> {{'ORDERS.WEIGHT' | translate}} {{item.weight}}</div>
               </div>
 
               <div class="form-group">
                 <div>
-                  Shipping date: {{item.shippingDate}}
-                </div>
-              </div>
-
-
-              <div class="form-group">
-                <div>
-                  Delivery date: {{item.deliveryDate}}
+                  {{'ORDERS.DESTINATION' | translate}} {{item.destination.cityFrom}} - {{item.destination.cityTo}}
                 </div>
               </div>
 
               <div class="form-group">
-                <div>
-                  Shipping price : {{item.shippingPriceInCents}}
-                </div>
+                <div> {{'ORDERS.SHIPPING_DATE' | translate}} {{item.shippingDate}} </div>
+              </div>
+
+
+              <div class="form-group">
+                <div> {{'ORDERS.DELIVERY_DATE' | translate}} {{item.deliveryDate}} </div>
+              </div>
+
+              <div class="form-group">
+                <div> {{'ORDERS.SHIPPING_PRICE' | translate}} {{item.shippingPriceInCents}} </div>
               </div>
 
               <div class="form-group text-center" *ngIf="item.receipt != null ">
                 <a class="btn btn-outline-primary" (click)="showReceipt(item.receipt.id)">
-                  Show receipt
+                  {{'ORDERS.SHOW_RECEIPT' | translate}}
                 </a>
               </div>
 
               <div class="form-group text-center" *ngIf="item.receipt == null ">
                 <a class="btn btn-outline-primary" (click)="pay(item.id, item)">
-                  Pay
+                  {{'ORDERS.PAY' | translate}}
                 </a>
               </div>
 
               <div class="form-group text-center" *ngIf="item.status == 'RECEIVED' ">
                 <button class="btn btn-outline-primary" (click)="archiveOrder(item)">
-                  Archive
+                  {{'ORDERS.ARCHIVE' | translate}}
                 </button>
               </div>
 
 
               <div class="form-group text-center" *ngIf="item.status == 'NOT_PAID' ">
                 <button class="btn btn-outline-primary" (click)="deleteOrder(item)">
-                  Delete
+                  {{'ORDERS.DELETE' | translate}}
                 </button>
               </div>
 
