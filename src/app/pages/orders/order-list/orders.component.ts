@@ -90,16 +90,20 @@ export class OrdersComponent implements OnInit, AfterViewInit {
   }
 
   archiveOrder(order: Order) {
-    this.orderService.archiveOrder(order.id).subscribe(() => {
-      order.status = Status.ARCHIVED;
-      this.findAllOrders();
-    });
+    if (confirm('are you sure?')) {
+      this.orderService.archiveOrder(order.id).subscribe(() => {
+        order.status = Status.ARCHIVED;
+        this.findAllOrders();
+      });
+    }
   }
 
   deleteOrder(order: Order) {
-    this.orderService.deleteOrder(order.id).subscribe(() => {
-      this.findAllOrders();
-    });
+    if (confirm('are you sure?')) {
+      this.orderService.deleteOrder(order.id).subscribe(() => {
+        this.findAllOrders();
+      });
+    }
   }
 
   showReceipt(id: number) {

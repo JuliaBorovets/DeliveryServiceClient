@@ -74,5 +74,61 @@
       "NUMBER_ORDERS": "Number of orders",
       "ANNUAL_INCOME": "Annual income"
     }
+  },
+  "NEW_ORDER": {
+    "NEW_ORDER": "New order",
+    "DESCRIPTION": "Description : ",
+    "WEIGHT": "Weight : ",
+    "TYPE": "Type : ",
+    "DESTINATION_FROM": "City from : ",
+    "DESTINATION_TO": "City to : ",
+    "SUBMIT": "Create"
+  },
+  "BANK": {
+    "NEW_CARD": "New card",
+    "RECEIPTS": "Receipts",
+    "CREDIT_CARD": "Credit card",
+    "CARD_NUMBER": "Card number",
+    "EXPIRATION": "Expiration",
+    "MONTH": "Month",
+    "YEAR": "Year",
+    "CCV_INFO": "Three-digits code on the back of your card",
+    "CCV": "CCV",
+    "CONFIRM": "Confirm",
+    "EDIT_CARD": "Edit",
+    "BALANCE": "Balance"
+  },
+  "RECEIPTS": {
+    "SEARCH": "Search by ID",
+    "ORDER": "Order",
+    "PRICE": "Price",
+    "USER": "User",
+    "BANK_CARD": "Bank card",
+    "DATE": "Date"
+  },
+  "USER": {
+    "INFO": "User info",
+    "LOGIN": "Login",
+    "FIRST_NAME": "First name",
+    "LAST_NAME": "Last name",
+    "EMAIL": "e-mail",
+    "ROLE": "Role",
+    "EDIT": "Edit",
+    "PASSWORD": "Password",
+    "SUBMIT": "Submit",
+    "CLOSE": "Close"
+  },
+  "LOGIN": {
+    "USERNAME": "Username",
+    "PASSWORD": "Password",
+    "LOGIN": "Login"
+  },
+  "REGISTER": {
+    "FIRST_NAME": "First name",
+    "LAST_NAME": "Last name",
+    "LOGIN": "Login",
+    "EMAIL": "e-mail",
+    "PASSWORD": "Password",
+    "SIGN_UP": "Sign up"
   }
 }

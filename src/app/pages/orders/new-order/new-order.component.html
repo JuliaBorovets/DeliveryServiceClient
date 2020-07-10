@@ -12,10 +12,9 @@
             <div class="pannel-group text-center">
               <div class="panel panel-primary">
                 <div class="panel-heading">
-                  <h3 class="panel-title">New order</h3>
+                  <h3 class="panel-title">{{'NEW_ORDER.NEW_ORDER' | translate}}</h3>
                 </div>
                 <div class="panel-body text-center">
-
 
                   <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
                     {{errorMessage}}
@@ -25,77 +24,60 @@
 
                     <div class="col-md-12 form-group text-center"
                          [ngClass]="{'has-error': f.submitted && !description.valid}">
-                      <label for="description">Description:</label>
+                      <label for="description">{{'NEW_ORDER.DESCRIPTION' | translate}}</label>
                       <input type="text" name="description" class="form-control" id="description" maxlength="255"
-                             placeholder="description" [(ngModel)]="order.description" #description="ngModel" required/>
-                      <div class="invalid-feedback">First name is required.</div>
+                             [(ngModel)]="order.description" #description="ngModel" required/>
                     </div>
                   </div>
 
                   <div class="row">
                     <div class="col-md-5 offset-md-1 form-group text-center"
                          [ngClass]="{'has-error': f.submitted && !weight.valid}">
-                      <label for="weight">Weight:</label>
+                      <label for="weight">{{'NEW_ORDER.WEIGHT' | translate}}</label>
                       <input type="number" name="weight" id="weight" class="form-control" [(ngModel)]="order.weight"
-                             #weight="ngModel"
-                             min="0" required/>
+                             #weight="ngModel" min="0" required/>
                     </div>
 
                     <div class="col-md-5 offset-md-0 form-group text-center"
                          [ngClass]="{'has-error': f.submitted && !type.valid}">
-                      <label for="type">Type:</label>
+                      <label for="type">{{'NEW_ORDER.TYPE' | translate}}</label>
                       <select id="type" name="type" class="form-control" [(ngModel)]="order.type" #type="ngModel"
                               required>
-                        <option *ngFor="let item of types"
-                                value="{{item.id}}"
-                        >  {{item.name}}
-                        </option>
+                        <option *ngFor="let item of types" value="{{item.id}}"> {{item.name}} </option>
                       </select>
-
                     </div>
                   </div>
                   <div class="row">
 
                     <div class="col-md-5 offset-md-1 form-group text-center"
                          [ngClass]="{'has-error': f.submitted && !destinationF.valid}">
-                      <label for="destinationsFrom">Destination from:</label>
+                      <label for="destinationsFrom">{{'NEW_ORDER.DESTINATION_FROM' | translate}}</label>
                       <select id="destinationsFrom" class="form-control" [(ngModel)]="order.destinationCityFrom"
                               #destinationF="ngModel" name="destinationCityFrom" required>
-                        <option *ngFor="let item of destinationsFrom"
-                                value="{{item}}"
-                        >  {{item}}
-                        </option>
+                        <option *ngFor="let item of destinationsFrom" value="{{item}}"> {{item}} </option>
                       </select>
 
                     </div>
 
                     <div class="col-md-5 offset-md-0 form-group text-center"
                          [ngClass]="{'has-error': f.submitted && !destinationT.valid}">
-                      <label for="destinationsTo">Destination to:</label>
+                      <label for="destinationsTo">{{'NEW_ORDER.DESTINATION_TO' | translate}}</label>
                       <select id="destinationsTo" class="form-control" [(ngModel)]="order.destinationCityTo"
                               #destinationT="ngModel" name="destinationCityTo" required>
-                        <option *ngFor="let item of destinationsTo"
-                                value="{{item}}"
-                        >  {{item}}
-                        </option>
+                        <option *ngFor="let item of destinationsTo" value="{{item}}"> {{item}} </option>
                       </select>
-
                     </div>
-
                   </div>
 
                   <div class="form-group text-center">
-
-                    <button type="submit" class="btn btn-outline-primary">Submit</button>
+                    <button type="submit" class="btn btn-outline-primary">{{'NEW_ORDER.SUBMIT' | translate}}</button>
                   </div>
                 </div>
               </div>
-
             </div>
           </form>
         </div>
       </div>
     </div>
   </div>
-
 </section>

@@ -2,8 +2,9 @@
 <section class="jumbotron2 text-center">
   <div class="container">
     <div class="btn-group mr-2" role="group" aria-label="First group" style="width: 30%">
-      <button class="btn btn-outline-primary" style="width: 50%" (click)="newCard()"> New card</button>
-      <a class="btn btn-outline-primary" style="width: 50%" routerLink="/receipt"> Checks </a>
+      <button class="btn btn-outline-primary" style="width: 50%"
+              (click)="newCard()">{{'BANK.NEW_CARD' | translate}}</button>
+      <a class="btn btn-outline-primary" style="width: 50%" routerLink="/receipt"> {{'BANK.RECEIPTS' | translate}} </a>
     </div>
   </div>
 </section>
@@ -22,7 +23,7 @@
           <li class="nav-item">
             <a data-toggle="pill" href="#nav-tab-card" class="nav-link active rounded-pill ">
               <i class="fa fa-credit-card"></i>
-              Credit Card
+              {{'BANK.CREDIT_CARD' | translate}}
             </a>
           </li>
         </ul>
@@ -34,9 +35,10 @@
                   [ngClass]="f.submitted ? 'was-validated' : ''">
 
               <div class="form-group" [ngClass]="{'has-error': f.submitted && !id.valid}">
-                <label for="id">Card number</label>
+                <label for="id"> {{'BANK.CARD_NUMBER' | translate}} </label>
                 <div class="input-group">
-                  <input id="id" type="text" pattern="\d*" placeholder="Your card number" class="form-control"
+                  <input id="id" type="text" pattern="\d*" placeholder="{{'BANK.CARD_NUMBER' | translate}}"
+                         class="form-control"
                          [(ngModel)]="card.id" #id="ngModel" name="id" maxlength="16" required/>
                 </div>
               </div>
@@ -44,11 +46,12 @@
               <div class="row">
                 <div class="col-sm-8">
                   <div class="form-group mb-4">
-                    <label><span class="hidden-xs">Expiration</span></label>
+                    <label><span class="hidden-xs"> {{'BANK.EXPIRATION' | translate}} </span></label>
                     <div class="input-group" [ngClass]="{'has-error': f.submitted && !exp.valid}">
-                      <input id="month" type="text" pattern="\d*" placeholder="Month" class="form-control"
-                             [(ngModel)]="card.expMonth" #exp="ngModel" maxlength="2" name="expMonth" required/>
-                      <input type="text" pattern="\d*" placeholder="Year" class="form-control"
+                      <input id="month" type="text" pattern="\d*" placeholder="{{'BANK.MONTH' | translate}}"
+                             class="form-control" [(ngModel)]="card.expMonth" #exp="ngModel" maxlength="2"
+                             name="expMonth" required/>
+                      <input type="text" pattern="\d*" placeholder="{{'BANK.YEAR' | translate}}" class="form-control"
                              [(ngModel)]="card.expYear" #exp="ngModel" maxlength="4" name="expYear" required/>
                     </div>
                   </div>
@@ -56,16 +59,17 @@
 
                 <div class="col-sm-4">
                   <div class="form-group mb-4" [ngClass]="{'has-error': f.submitted && !ccv.valid}">
-                    <label data-toggle="tooltip" title="Three-digits code on the back of your card">CVV
+                    <label data-toggle="tooltip" title="{{'BANK.CCV_INFO' | translate}}">
                       <i class="fa fa-question-circle"></i>
                     </label>
-                    <input type="password" pattern="\d*" placeholder="CVV" class="form-control"
+                    <input type="password" pattern="\d*" placeholder="CCV" class="form-control"
                            [(ngModel)]="card.ccv" #ccv="ngModel" maxlength="3" name="ccv" required/>
                   </div>
                 </div>
               </div>
 
-              <button type="submit" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm ">Confirm</button>
+              <button type="submit"
+                      class="subscribe btn btn-primary btn-block rounded-pill shadow-sm ">{{'BANK.CONFIRM' | translate}}</button>
 
             </form>
           </div>
@@ -90,7 +94,7 @@
           <li class="nav-item">
             <a data-toggle="pill" href="#nav-tab-card" class="nav-link active rounded-pill ">
               <i class="fa fa-credit-card"></i>
-              Credit Card
+              {{'BANK.EDIT_CARD' | translate}}
             </a>
           </li>
         </ul>
@@ -102,7 +106,7 @@
                   [ngClass]="f.submitted ? 'was-validated' : ''">
 
               <div class="form-group">
-                <label for="card_number">Card number</label>
+                <label for="card_number">{{'BANK.CARD_NUMBER' | translate}}</label>
                 <div class="input-group">
                   <input type="number" id="card_number" name="id" class="form-control"
                          maxlength="16" [(ngModel)]="card.id" disabled/>
@@ -113,16 +117,17 @@
               <div class="row">
                 <div class="col-sm-4">
                   <div class="form-group mb-4" [ngClass]="{'has-error': f.submitted && !balance.valid}">
-                    <label for="balance"> Balance : </label>
+                    <label for="balance"> {{'BANK.BALANCE' | translate}} </label>
                     <input type="text" name="balance" id="balance" pattern="[0-9]+([,.][0-9]+)?"
-                           placeholder="Your balance"
+                           placeholder="{{'BANK.BALANCE' | translate}}"
                            class="form-control" maxlength="16" [(ngModel)]="card.balance" #balance="ngModel" required/>
                   </div>
                 </div>
 
               </div>
 
-              <button type="submit" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm "> Confirm
+              <button type="submit" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm ">
+                {{'BANK.CONFIRM' | translate}}
               </button>
             </form>
           </div>
@@ -146,7 +151,7 @@
           <thead>
           <tr>
             <th style="width: 40%">ID</th>
-            <th style="width: 40%">balance</th>
+            <th style="width: 40%">{{'BANK.BALANCE' | translate}}</th>
             <th style="width: 20%"><em class="fa fa-cog"></em></th>
           </tr>
           </thead>

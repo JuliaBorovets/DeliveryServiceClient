@@ -74,5 +74,61 @@
       "NUMBER_ORDERS": "Кількість замовлень",
       "ANNUAL_INCOME": "Річний прибуток"
     }
+  },
+  "NEW_ORDER": {
+    "NEW_ORDER": "Нове замовлення",
+    "DESCRIPTION": "Опис : ",
+    "WEIGHT": "Вага : ",
+    "TYPE": "Тип : ",
+    "DESTINATION_FROM": "Місто від : ",
+    "DESTINATION_TO": "Місто до : ",
+    "SUBMIT": "Створити"
+  },
+  "BANK": {
+    "NEW_CARD": "Нова картка",
+    "RECEIPTS": "Чеки",
+    "CREDIT_CARD": "Картка",
+    "CARD_NUMBER": "Номер картки",
+    "EXPIRATION": "Термін дії",
+    "MONTH": "Місяць",
+    "YEAR": "Рік",
+    "CCV_INFO": "Трицифровий код на звороті картки",
+    "CCV": "CCV",
+    "CONFIRM": "Підтвердити",
+    "EDIT_CARD": "Редагувати",
+    "BALANCE": "Баланс"
+  },
+  "RECEIPTS": {
+    "SEARCH": "Пошук по ID",
+    "ORDER": "Замовлення",
+    "PRICE": "Ціна",
+    "USER": "Користувач",
+    "BANK_CARD": "Картка",
+    "DATE": "Дата"
+  },
+  "USER": {
+    "INFO": "Інформація про користувача",
+    "LOGIN": "Логін",
+    "FIRST_NAME": "Ім'я",
+    "LAST_NAME": "Прізвище",
+    "EMAIL": "e-mail",
+    "ROLE": "Роль",
+    "EDIT": "Редагувати",
+    "PASSWORD": "Пароль",
+    "SUBMIT": "Підтвердити",
+    "CLOSE": "Відмінити"
+  },
+  "LOGIN": {
+    "USERNAME": "Логін",
+    "PASSWORD": "Пароль",
+    "LOGIN": "Увійти"
+  },
+  "REGISTER": {
+    "FIRST_NAME": "Ім'я",
+    "LAST_NAME": "Прізвище",
+    "LOGIN": "Логін",
+    "EMAIL": "e-mail",
+    "PASSWORD": "Пароль",
+    "SIGN_UP": "Зареєструватися"
   }
 }

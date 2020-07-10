@@ -20,7 +20,17 @@ export class ReceiptComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    this.showAllUserReceipts();
+    this.route.queryParams.subscribe(params => {
+      if (params.id !== undefined) {
+        this.id = params.id;
+      }
+    });
+
+    if (this.id !== undefined && this.id !== null) {
+      this.searchReceipt();
+    } else {
+      this.showAllUserReceipts();
+    }
   }
 
   ngAfterViewInit(): void {

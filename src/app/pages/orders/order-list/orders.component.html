@@ -1,11 +1,15 @@
 <section class="jumbotron2 text-center">
   <div class="container">
     <br>
-    <div class="btn-group mr-2" role="group" aria-label="First group">
-      <a class="btn btn-outline-primary" (click)="findAllOrders()"> {{'ORDERS.SHOW_ALL' | translate}} </a>
-      <a class="btn btn-outline-primary" (click)="findNotPaidOrders()"> {{'ORDERS.SHOW_NOT_PAID' | translate}} </a>
-      <a class="btn btn-outline-primary" (click)="findDeliveredOrders()"> {{'ORDERS.SHOW_DELIVERED' | translate}} </a>
-      <a class="btn btn-outline-primary" (click)="findArchivedOrders()"> {{'ORDERS.SHOW_ARCHIVED' | translate}} </a>
+    <div class="btn-group mr-2" role="group" aria-label="First group" style="width: 60%">
+      <a class="btn btn-outline-primary" (click)="findAllOrders()"
+         style="width: 25%"> {{'ORDERS.SHOW_ALL' | translate}} </a>
+      <a class="btn btn-outline-primary" (click)="findNotPaidOrders()"
+         style="width: 25%"> {{'ORDERS.SHOW_NOT_PAID' | translate}} </a>
+      <a class="btn btn-outline-primary" (click)="findDeliveredOrders()"
+         style="width: 25%"> {{'ORDERS.SHOW_DELIVERED' | translate}} </a>
+      <a class="btn btn-outline-primary" (click)="findArchivedOrders()"
+         style="width: 25%"> {{'ORDERS.SHOW_ARCHIVED' | translate}} </a>
     </div>
   </div>
 </section>
