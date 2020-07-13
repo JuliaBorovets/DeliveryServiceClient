@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BankCard} from '../../models/bankCard';
 import {BankService} from '../../services/bank.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-bank',
@@ -13,8 +14,9 @@ export class BankComponent implements OnInit {
   isNew = false;
   isEdit = false;
   cardList: Array<BankCard>;
+  errorMessage = '';
 
-  constructor(private bankService: BankService) {
+  constructor(private bankService: BankService, public translate: TranslateService) {
   }
 
   ngOnInit(): void {
@@ -38,6 +40,12 @@ export class BankComponent implements OnInit {
       this.findAllCards();
       this.card = new BankCard();
       this.isNew = false;
+    }, error => {
+      if (error && error.status === 400) {
+        this.errorMessage = this.translate.instant('ERROR_MESSAGES.INCORRECT');
+      } else {
+        this.errorMessage = this.translate.instant('ERROR_MESSAGES.ALL');
+      }
     });
   }
 

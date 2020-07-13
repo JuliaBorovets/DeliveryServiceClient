@@ -3,6 +3,7 @@ import {Order} from '../../../models/order';
 import {OrderService} from '../../../services/order.service';
 import {OrderType} from '../../../models/orderType';
 import {Router} from '@angular/router';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-new-order',
@@ -18,7 +19,7 @@ export class NewOrderComponent implements OnInit {
   submitted = false;
   errorMessage: string;
 
-  constructor(private orderService: OrderService, private router: Router) {
+  constructor(private orderService: OrderService, private router: Router, public translate: TranslateService) {
   }
 
   ngOnInit(): void {
@@ -36,7 +37,7 @@ export class NewOrderComponent implements OnInit {
       .subscribe(data =>
           this.router.navigate(['/orders']),
         err => {
-          this.errorMessage = 'Unexpected error occurred. Error is: ' + err;
+          this.errorMessage = this.translate.instant('ERROR_MESSAGES.ALL');
         });
   }
 

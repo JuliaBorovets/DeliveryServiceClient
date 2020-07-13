@@ -5,6 +5,7 @@ import {Receipt} from '../../models/receipt';
 import {BankCard} from '../../models/bankCard';
 import {ActivatedRoute, Router} from '@angular/router';
 import {User} from '../../models/user';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-pay',
@@ -20,7 +21,7 @@ export class PayComponent implements OnInit {
   currentUser: User;
   errorMessage: string;
 
-  constructor(private bankService: BankService, private route: ActivatedRoute, private router: Router) {
+  constructor(private bankService: BankService, private route: ActivatedRoute, private router: Router, public translate: TranslateService) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
@@ -43,7 +44,7 @@ export class PayComponent implements OnInit {
     this.bankService.pay(this.receipt).subscribe(() => {
       this.router.navigate(['receipt']);
     }, () => {
-      this.errorMessage = 'No money';
+      this.errorMessage = this.translate.instant('ERROR_MESSAGES.NO_MONEY');
     });
   }
 }

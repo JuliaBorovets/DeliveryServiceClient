@@ -9,6 +9,10 @@
           <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
                 [ngClass]="f.submitted ? 'was-validated' : ''">
 
+            <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+              {{errorMessage}}
+            </div>
+
             <div class="pannel-group text-center">
               <div class="panel panel-primary">
                 <div class="panel-heading">
@@ -25,7 +29,8 @@
                     <div class="col-md-12 form-group text-center"
                          [ngClass]="{'has-error': f.submitted && !description.valid}">
                       <label for="description">{{'NEW_ORDER.DESCRIPTION' | translate}}</label>
-                      <input type="text" name="description" class="form-control" id="description" maxlength="255"
+                      <input type="text" name="description" class="form-control" id="description" minlength="3"
+                             maxlength="255"
                              [(ngModel)]="order.description" #description="ngModel" required/>
                     </div>
                   </div>

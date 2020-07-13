@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {User} from '../../../models/user';
 import {UserService} from '../../../services/user.service';
 import {Router} from '@angular/router';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register',
@@ -11,9 +12,9 @@ import {Router} from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   user: User = new User();
-  errorMessage: string;
+  errorMessage = '';
 
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private userService: UserService, private router: Router, public translate: TranslateService) {
   }
 
   ngOnInit(): void {
@@ -28,9 +29,11 @@ export class RegisterComponent implements OnInit {
       this.router.navigate(['/profile']);
     }, err => {
       if (err && err.status === 409) {
-        this.errorMessage = 'Username is already exist';
+        this.errorMessage = this.translate.instant('ERROR_MESSAGES.USER_ALREADY_EXISTS');
+      } else if (err && err.status === 400) {
+        this.errorMessage = this.translate.instant('ERROR_MESSAGES.PASSWORD');
       } else {
-        this.errorMessage = 'Unexpected error occurred. Error is: ' + err;
+        this.errorMessage = this.translate.instant('ERROR_MESSAGES.ALL');
       }
     });
   }

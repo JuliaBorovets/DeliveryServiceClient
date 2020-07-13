@@ -19,8 +19,8 @@ export class AppComponent {
       this.currentUser = data;
     });
 
-    translate.setDefaultLang('en');
-    translate.use('en');
+    translate.setDefaultLang('uk');
+    translate.use('uk');
 
   }
 

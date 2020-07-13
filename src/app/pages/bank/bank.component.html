@@ -11,6 +11,10 @@
 
 <div class="container py-5" *ngIf="isNew">
 
+  <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+    {{errorMessage}}
+  </div>
+
   <div class="row">
     <div class="col-lg-7 mx-auto">
       <div class="bg-white rounded-lg shadow-sm p-5">
@@ -39,7 +43,7 @@
                 <div class="input-group">
                   <input id="id" type="text" pattern="\d*" placeholder="{{'BANK.CARD_NUMBER' | translate}}"
                          class="form-control"
-                         [(ngModel)]="card.id" #id="ngModel" name="id" maxlength="16" required/>
+                         [(ngModel)]="card.id" #id="ngModel" name="id" minlength="16" maxlength="16" required/>
                 </div>
               </div>
 
@@ -52,7 +56,8 @@
                              class="form-control" [(ngModel)]="card.expMonth" #exp="ngModel" maxlength="2"
                              name="expMonth" required/>
                       <input type="text" pattern="\d*" placeholder="{{'BANK.YEAR' | translate}}" class="form-control"
-                             [(ngModel)]="card.expYear" #exp="ngModel" maxlength="4" name="expYear" required/>
+                             [(ngModel)]="card.expYear" #exp="ngModel" minlength="4" maxlength="4" name="expYear"
+                             required/>
                     </div>
                   </div>
                 </div>
@@ -63,7 +68,7 @@
                       <i class="fa fa-question-circle"></i>
                     </label>
                     <input type="password" pattern="\d*" placeholder="CCV" class="form-control"
-                           [(ngModel)]="card.ccv" #ccv="ngModel" maxlength="3" name="ccv" required/>
+                           [(ngModel)]="card.ccv" #ccv="ngModel" minlength="3" maxlength="3" name="ccv" required/>
                   </div>
                 </div>
               </div>

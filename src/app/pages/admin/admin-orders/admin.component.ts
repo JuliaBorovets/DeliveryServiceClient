@@ -89,9 +89,4 @@ export class AdminComponent implements OnInit, AfterViewInit {
   userList() {
     this.router.navigate(['userList']);
   }
-
-  showChecks() {
-
-  }
-
 }

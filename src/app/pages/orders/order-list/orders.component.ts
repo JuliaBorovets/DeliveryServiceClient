@@ -4,6 +4,7 @@ import {User} from '../../../models/user';
 import {OrderService} from '../../../services/order.service';
 import {ActivatedRoute, NavigationExtras, Router} from '@angular/router';
 import {Status} from '../../../models/status';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-orders',
@@ -17,7 +18,7 @@ export class OrdersComponent implements OnInit, AfterViewInit {
   public id: number;
   currentUser: User;
 
-  constructor(private orderService: OrderService, private route: ActivatedRoute, private router: Router) {
+  constructor(private orderService: OrderService, private route: ActivatedRoute, private router: Router, public translate: TranslateService) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
@@ -90,7 +91,7 @@ export class OrdersComponent implements OnInit, AfterViewInit {
   }
 
   archiveOrder(order: Order) {
-    if (confirm('are you sure?')) {
+    if (confirm(this.translate.instant('ERROR_MESSAGES.CONFIRM'))) {
       this.orderService.archiveOrder(order.id).subscribe(() => {
         order.status = Status.ARCHIVED;
         this.findAllOrders();
@@ -99,7 +100,7 @@ export class OrdersComponent implements OnInit, AfterViewInit {
   }
 
   deleteOrder(order: Order) {
-    if (confirm('are you sure?')) {
+    if (confirm(this.translate.instant('ERROR_MESSAGES.CONFIRM'))) {
       this.orderService.deleteOrder(order.id).subscribe(() => {
         this.findAllOrders();
       });
