@@ -74,12 +74,12 @@ export class StatisticsComponent implements OnInit, AfterViewInit {
         scales: {
           yAxes: [{
             ticks: {
-              fontSize: 54
+              fontSize: 30
             }
           }],
           xAxes: [{
             ticks: {
-              fontSize: 54
+              fontSize: 30
             }
           }]
         },

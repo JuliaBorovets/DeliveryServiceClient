@@ -5,8 +5,6 @@ import {Observable} from 'rxjs';
 import {BankCard} from '../models/bankCard';
 import {Receipt} from '../models/receipt';
 
-const API_URL = 'http://localhost:8080/api/user/bank';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -26,23 +24,23 @@ export class BankService {
   }
 
   createCard(card: any): Observable<any> {
-    return this.http.post(API_URL, card, {headers: this.headers()});
+    return this.http.post('/api/user/bank', card, {headers: this.headers()});
   }
 
   findAllCards(): Observable<any> {
-    return this.http.get(API_URL, {headers: this.headers()});
+    return this.http.get('/api/user/bank', {headers: this.headers()});
   }
 
   updateCard(card: BankCard): Observable<any> {
-    return this.http.patch(API_URL, card, {headers: this.headers()});
+    return this.http.patch('/api/user/bank', card, {headers: this.headers()});
   }
 
   deleteCard(id: number): Observable<any> {
-    return this.http.delete(API_URL + '/' + id, {headers: this.headers()});
+    return this.http.delete('/api/user/bank/' + id, {headers: this.headers()});
   }
 
   pay(receipt: Receipt) {
-    return this.http.post(API_URL + '/pay', receipt, {headers: this.headers()});
+    return this.http.post('/api/user/bank/pay', receipt, {headers: this.headers()});
   }
 
 }

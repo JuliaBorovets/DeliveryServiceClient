@@ -3,11 +3,6 @@ import {User} from '../models/user';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
-const ADMIN_API_URL = 'http://localhost:8080/api/admin';
-const API_URL = 'http://localhost:8080/api/user/shipments';
-const USER_API_URL = 'http://localhost:8080/api';
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -27,55 +22,55 @@ export class AdminService {
   }
 
   findAllPaidOrders(): Observable<any> {
-    return this.http.get(API_URL + '/paid', {headers: this.headers()});
+    return this.http.get(  '/api/user/shipments/paid', {headers: this.headers()});
   }
 
   findAllShippedOrders(): Observable<any> {
-    return this.http.get(API_URL + '/shipped', {headers: this.headers()});
+    return this.http.get(  '/api/user/shipments/shipped', {headers: this.headers()});
   }
 
   findAllDeliveredOrders(): Observable<any> {
-    return this.http.get(API_URL + '/delivered', {headers: this.headers()});
+    return this.http.get( '/api/user/shipments/delivered', {headers: this.headers()});
   }
 
   shipOrder(id: number): Observable<any> {
-    return this.http.patch(ADMIN_API_URL + '/to_ship/' + id, {}, {headers: this.headers()});
+    return this.http.patch( '/api/admin/to_ship/' + id, {}, {headers: this.headers()});
   }
 
   deliverOrder(id: number): Observable<any> {
-    return this.http.patch(ADMIN_API_URL + '/to_deliver/' + id, {}, {headers: this.headers()});
+    return this.http.patch( '/api/admin/to_deliver/' + id, {}, {headers: this.headers()});
   }
 
   receiveOrder(id: number): Observable<any> {
-    return this.http.patch(ADMIN_API_URL + '/to_receive/' + id, {}, {headers: this.headers()});
+    return this.http.patch( '/api/admin/to_receive/' + id, {}, {headers: this.headers()});
   }
 
   findAllUsers(): Observable<any> {
-    return this.http.get(USER_API_URL + '/users', {headers: this.headers()});
+    return this.http.get(  '/api/users', {headers: this.headers()});
   }
 
   findUserByLogin(login: string): Observable<any> {
-    return this.http.get(USER_API_URL + '/find/' + login, {headers: this.headers()});
+    return this.http.get( '/api/find/' + login, {headers: this.headers()});
   }
 
   findAllReceipts(): Observable<any> {
-    return this.http.get(ADMIN_API_URL + '/show_all_receipts', {headers: this.headers()});
+    return this.http.get(  '/api/admin/show_all_receipts', {headers: this.headers()});
   }
 
   createStatistics(): Observable<any> {
-    return this.http.get(ADMIN_API_URL, {headers: this.headers()});
+    return this.http.get('/api/admin', {headers: this.headers()});
   }
 
   numbersYear(): Observable<any> {
-    return this.http.get(ADMIN_API_URL + '/numbersYear', {headers: this.headers()});
+    return this.http.get('/api/admin/numbersYear', {headers: this.headers()});
   }
 
   earningsYear(): Observable<any> {
-    return this.http.get(ADMIN_API_URL + '/earningsYear', {headers: this.headers()});
+    return this.http.get('/api/admin/earningsYear', {headers: this.headers()});
   }
 
   changeRole(id: number, role: string) {
-    return this.http.patch(`${USER_API_URL}/change/${id}/${role}`, {}, {headers: this.headers()});
+    return this.http.patch(`/api/change/${id}/${role}`, {}, {headers: this.headers()});
   }
 
 }

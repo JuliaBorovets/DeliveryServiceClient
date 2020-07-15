@@ -3,8 +3,6 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {User} from '../models/user';
 
-const API_URL = 'http://localhost:8080/api/user/receipt';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -24,11 +22,11 @@ export class ReceiptService {
   }
 
   showAllUserReceipts(): Observable<any> {
-    return this.http.get(API_URL, {headers: this.headers()});
+    return this.http.get('/api/user/receipt', {headers: this.headers()});
   }
 
   findReceiptById(id: number): Observable<any> {
-    return this.http.get(API_URL + '/' + id, {headers: this.headers()});
+    return this.http.get('api/user/receipt/' + id, {headers: this.headers()});
   }
 
 }

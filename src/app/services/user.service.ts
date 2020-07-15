@@ -4,8 +4,6 @@ import {BehaviorSubject, Observable} from 'rxjs';
 import {User} from '../models/user';
 import {map} from 'rxjs/operators';
 
-const API_URL = 'http://localhost:8080/api';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -31,7 +29,7 @@ export class UserService {
       } : {}
     );
 
-    return this.http.get<any>(API_URL + '/login', {headers}).pipe(
+    return this.http.get<any>('/api/login', {headers}).pipe(
       map(response => {
         if (response) {
           response.password = user.password; // Store pure password.
@@ -44,7 +42,7 @@ export class UserService {
   }
 
   logOut(): Observable<any> {
-    return this.http.post(API_URL + '/logout', {}).pipe(
+    return this.http.post('/api/logout', {}).pipe(
       map(response => {
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null);
@@ -53,10 +51,10 @@ export class UserService {
   }
 
   register(user: User): Observable<any> {
-    return this.http.post(API_URL, user);
+    return this.http.post('/api', user);
   }
 
   updateUserInfo(user: User): Observable<any> {
-    return this.http.put(API_URL + '/update', user, {});
+    return this.http.put( '/api/update', user, {});
   }
 }
