@@ -3,7 +3,6 @@ import {Router, RouterModule, Routes} from '@angular/router';
 
 import {LoginComponent} from './pages/user/login/login.component';
 import {RegisterComponent} from './pages/user/register/register.component';
-// import {ProfileComponent} from './pages/profile/profile.component';
 import {HomeComponent} from './pages/home/home.component';
 import {NotFoundComponent} from './pages/not-found/not-found.component';
 import {UnauthorizedComponent} from './pages/user/unauthorized/unauthorized.component';
@@ -22,7 +21,7 @@ import {InfoComponent} from './pages/user/info/info.component';
 
 const routes: Routes = [
 
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
 

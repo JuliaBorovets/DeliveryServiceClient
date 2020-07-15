@@ -1,6 +1,6 @@
-<div id="container">
+<div id="container" >
   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom shadow-sm">
-    <h5 class="p_name mr-md-auto font-weight-bold ">Delivery Service</h5>
+    <h1 class="p_name mr-md-auto font-weight-bold ">Delivery Service</h1>
 
     <a class="nav-link" (click)="changeLang('uk')">Українська</a>
     <a class="nav-link" (click)="changeLang('en')">English</a>
@@ -11,7 +11,7 @@
       <a class="btn btn-outline-primary" *ngIf="!currentUser" routerLink="/login"> {{'GENERAL.LOG_IN' | translate}} </a>
     </div>
 
-    <a *ngIf="currentUser" class="btn btn-outline-primary " (click)="logOut()">{{'GENERAL.LOGOUT' | translate}}</a>
+    <a *ngIf="currentUser" class="btn btn-outline-primary "  (click)="logOut()">{{'GENERAL.LOGOUT' | translate}}</a>
 
   </div>
 

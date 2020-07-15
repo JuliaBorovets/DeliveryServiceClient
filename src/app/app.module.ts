@@ -22,6 +22,7 @@ import {InfoComponent} from './pages/user/info/info.component';
 import {CommonModule} from '@angular/common';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -47,7 +48,6 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     TranslateModule.forRoot({
@@ -56,7 +56,8 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
